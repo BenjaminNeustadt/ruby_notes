@@ -1,0 +1,4054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<meta name="author" content="Benjamin b.james.neustadt@gmail.com">
+<meta name="copyright" content="© 2022 Benjamin and KOTP">
+<title>Notes As We Go</title>
+<style>
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+@import "https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css";
+
+a {
+  text-decoration: none;
+}
+
+body {
+  color: #d3d3d3;
+  background-color: #35353a ;
+}
+
+.light-body-experiment {
+  background-color: blue;
+}
+
+#toctitle {
+  font-family: Arial Black;
+  color: pink;
+}
+
+.sidebarblock {
+  background-color: #a09f9f;
+}
+
+.sidebarblock-dark-theme {
+  background-color: pink;
+}
+
+#toc.toc2 {
+  background-color: #35353a;
+  border: 3px dotted pink;
+  border-top: 3px dotted pink !important;
+}
+
+#tocbot a.toc-link.node-name--H1 {
+  color: #d3d3d3;
+}
+
+#tocbot a.toc-link {
+  color: pink;
+}
+
+h1 strong, h2 strong, h3 strong, #toctitle strong, .sidebarblock>.content>.title strong, h4 strong, h5 strong, h6 strong {
+  color: pink;
+}
+
+h2 {
+  color: #FFB6C1;
+}
+
+h3 {
+  color: #FFB6C1;
+}
+
+.admonitionblock td.content>.title, .audioblock>.title, .exampleblock>.title, .imageblock>.title, .listingblock>.title, .literalblock>.title, .stemblock>.title, .openblock>.title, .paragraph>.title, .quoteblock>.title, table.tableblock>.title, .verseblock>.title, .videoblock>.title, .dlist>.title, .olist>.title, .ulist>.title, .qlist>.title, .hdlist>.title {
+  color: #C0C0C0;
+  text-shadow: 1px 1px black;
+}
+
+a {
+  color: pink;
+}
+
+.quoteblock blockquote>.paragraph:last-child p {
+  color: #d3d3d3;
+}
+
+.quoteblock blockquote, .quoteblock p {
+  color: #d3d3d3;
+}
+
+.quoteblock .attribution cite, .verseblock .attribution cite {
+  color: pink;
+}
+
+table {
+  background-color:#d3d3d3;
+}
+
+table {
+  background-color:#d3d3d3;
+}
+
+em {
+  color: #d3d3d3;
+  text-shadow: 1px 1px black;
+}
+
+table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+  color: #a6b0a8fa;
+}
+
+table.frame-all {
+  background-color:#35353a;
+}
+
+table.tableblock, th.tableblock, td.tableblock {
+  background-color:#35353a;
+}
+
+p.tableblock>code:only-child {
+  color: palevioletred;
+}
+
+p.tableblock:last-child {
+  color: white;
+}
+
+.admonitionblock>table td.content {
+  color: silver;
+}
+
+.sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock {
+  text-shadow: 1px 1px darkslategrey;
+}
+
+.intro_phrase {
+  color: #747474;
+  font-family: Arial Black;
+  font-size: 1.1em;
+  line-height: calc(1 / 1.1);
+}
+
+.hide-first-title {
+  color: #35353a ;
+  position: absolute;
+  margin-top: -100px;
+}
+
+.email {
+  color: #d3d3d3;
+  font-family: Arial Black;
+}
+
+.author {
+  color: #d3d3d3;
+  font-family: Arial Black;
+}
+
+#header {
+  margin-top:0;
+  margin-bottom:0;
+  padding-top:0;
+  padding-bottom:0;
+}
+
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="highlight/styles/github.min.css">
+<!-- Generate a nice TOC -->
+<style>
+  #tocbot a.toc-link.node-name--H1{ font-style: italic }
+  @media screen{
+    #tocbot > ul.toc-list{ margin-bottom: 0.5em; margin-left: 0.125em }
+    #tocbot ul.sectlevel0, #tocbot a.toc-link.node-name--H1 + ul{
+      padding-left: 0 }
+    #tocbot a.toc-link{ height:100% }
+    .is-collapsible{ max-height:3000px; overflow:hidden; }
+    .is-collapsed{ max-height:0 }
+    .is-active-link{ font-weight:700 }
+  }
+  @media print{
+    #tocbot a.toc-link.node-name--H4{ display:none }
+  }
+</style>
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1><em class="hide-first-title">Notes As We Go</em></h1>
+<div class="details">
+<span id="author" class="author">Benjamin b.james.neustadt@gmail.com</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_how_to_read_this_document"><strong>How to read this document</strong></a></li>
+<li><a href="#_commands"><strong>Commands</strong></a></li>
+<li><a href="#_git_version_control"><strong>Git Version Control</strong></a></li>
+<li><a href="#_ruby"><strong>Ruby</strong></a></li>
+<li><a href="#_theory"><strong>Theory</strong></a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="intro_phrase">An ongoing compilation of resources I find useful.</span></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/book_title.png" alt="notes as we go!">
+</div>
+</div>
+<div class="paragraph">
+<p>This first iteration is focused on Ruby language, and it&#8217;s frameworks.</p>
+</div>
+<div class="paragraph">
+<p>The plain text markup language <a href="https://asciidoc.org/" target="_blank" rel="noopener">AsciiDoc</a> is used to journal and arrange all technical content that is deemed useful.
+We then use a <a href="https://asciidoctor.org/" target="_blank" rel="noopener">Ruby based Text Processor</a> for compiling and parsing everything into a document model.
+It&#8217;s a really great tool that allows us to output different formats according to our needs.
+This process of working is great as it mechanizes the writing, editing, and compiling process so that we can focus more on the content.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>These notes are a work in progress. Proceed with caution and forgiveness.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<h1 id="_how_to_read_this_document" class="sect0"><strong>How to read this document</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p><em>We follow some convetions:</em></p>
+</div>
+<div class="paragraph">
+<p>Contributing to this document will be easier if we follow some style conventions.</p>
+</div>
+<div class="quoteblock quote">
+<div class="title">Single Sentence Per Line </div>
+<blockquote>
+<div class="paragraph">
+<p>Most documents go through several versions (always more than you expected) before they are finally finished.
+Accordingly, you should do whatever possible to make the job of changing them easy.</p>
+</div>
+<div class="paragraph">
+<p>First, when you do the purely mechanical operations of typing, type so subsequent editing will be easy.
+Start each sentence on a new line.
+Make lines short, and break lines at natural places, such as after commas and semicolons, rather than randomly.
+Since most people change documents by rewriting phrases and adding, deleting and rearranging sentences, these precautions simplify any editing you have to do later.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Brian W. Kernighan<br>
+<cite>1974</cite>
+</div>
+</div>
+<div class="paragraph">
+<p>Write somethihg for test
+In the case of this document, we will prefer "One Sentence, One Line".</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_admonitions">Admonitions</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is used for notes, noteworthy items.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This is used for tips, usually short or guiding material
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This is used for important information, things that may be more critical than a tip
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+This is used to provide caution, something may not be apparent, or may cause other problems.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This is to note great care should be given to this information, as it may cause something irrevocable to happen, or otherwise cause problems.
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/end-section.svg" alt="end section" width="3%">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<h1 id="_commands" class="sect0"><strong>Commands</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p><strong>These come first, as they tend to be the most useful for me.</strong></p>
+</div>
+<div class="paragraph normal">
+<p>This section is predominantly about moving around in the terminal.</p>
+</div>
+<div class="paragraph">
+<p>I like to use <a href="https://github.com/tmux/tmux/wiki" target="_blank" rel="noopener">Tmux</a> as a terminal multiplexer, allowing us to open multiple panes within our terminal.
+We can use a fork of Tmux <a href="https://github.com/tmate-io/tmate" target="_blank" rel="noopener">Tmate</a> which provides an instant pairing solution, we do so by sharing the ssh key of a session created for us when doing <code>tmux</code>.
+What is great is that we can import all of our personalised Tmate keybindings into the session by doing <code>tmux -f ~/.tmate.conf</code> (the tmate configuration file is at the root of our local, and is where we put any of our personalized keybindings).</p>
+</div>
+<div class="paragraph">
+<p>There are all sorts of really great things we can do through the terminal, and I have taken to using it for pretty much everything because it&#8217;s so efficient (except CSS styling).</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<em>A great resource and general good read regarding the command line:</em> <a href="https://github.com/jlevy/the-art-of-command-line" target="_blank" rel="noopener">The Art of Command Line</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Otherwise, I use this page to store commands that I have found useful. So it&#8217;s a: <em>Work in progress&#8230;&#8203;</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vim_commands">Vim Commands</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For basic commands like moving around (h,j,k,l) see vim tutor.
+These commands are slightly more esoteric.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:help [word]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">then hit <code>CTRL-D</code> to see matching help entries for "word".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:helpgrep [word]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Does the same as above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To see list of all possible files relating to vim instructions</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_navigating_around" class="discrete"><strong>Navigating Around</strong></h3>
+<div class="paragraph">
+<p>Commands to move around in the vim environment.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. <strong>Window or Pane control</strong></caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:split</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opens a new pane above/below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:control w + up arrow</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switch between these panes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:control w + _</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make other pane exponentially smaller</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:control w + =</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make panes of equal proportion</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:control w + -</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adjust incrementally proportion of pane</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:control w + +</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make current selected pane bigger</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Ctrl&gt;+&lt;w&gt;</code> then press <code>&lt;v&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open a new VIM window next to the existing one</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_editing" class="discrete"><strong>Editing</strong></h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. <strong>Useful Vim Keys for editing</strong></caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ysw</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"you surround word"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ds[character]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes character surrounding word/sentence (e.g. <code>"quotes"</code> becomes <code>quotes</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ys[n chars]l</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Surrounds the letter under cursor n times right</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ys[n chars]h</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Surrounds the letter under cursor n times left</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:set spell</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spell check (it highlights suspect words)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:set nospell</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turn off spell checker</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>z=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you&#8217;re sure its the first one</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1z=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you&#8217;re sure its the first one</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>~</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Capitalize a letter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do the last command (i.e. Capitalize a letter)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/[a word]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Highlights searched word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ctrl n</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to select how many times it appears, hit enter, then change the word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:noh</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove highlight on word or character until next search</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:set nohlsearch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turn off highlighting completely</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gqq</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Formatting lines: <a href="https://vim.fandom.com/wiki/Format_only_long_lines" target="_blank" rel="noopener">The Power of G</a>, or <a href="https://vim.fandom.com/wiki/Power_of_g" target="_blank" rel="noopener">formmating long lines</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>shift J</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Joins the line beneath to current line on.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tmux_commands">Tmux commands</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Commands to move around Tmux environment.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Window and Pane Management</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ctrl -b + c</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create new window</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ctrl -b + n</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move to next or previous window</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ctrl -b + z</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zoom into one pane, and again to zoom out</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ctrl -b + %</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open new vertical pane</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ctrl -b + "</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open new horinzontal pane</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ctrl -b + space</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reorganise panes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>To open a tmate session using tmux configuration do:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Tmate session with Tmux configurations</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">tmate -f ~/.tmux.conf</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_shell_commands">Shell Commands</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>git log [filename]</code> &#8658; if interested in the log history of a specific file
+E.G. <code>git log lib/user.rb</code></p>
+</div>
+<div class="paragraph">
+<div class="title">Regenerate on change to generate "book" using asciidoctor</div>
+<p><code>find . -name \*.adoc | entr -c asciidoctor book.adoc</code>
+&#8658; it runs continuous updates on a file to the html loaded version (can see in browser after refresh (control R))</p>
+</div>
+<div class="sect2">
+<h3 id="_command_line_art">Command-Line Art</h3>
+<div class="paragraph">
+<p><a href="https://github.com/jlevy/the-art-of-command-line" target="_blank" rel="noopener">The Art of Command Line</a> is great place to look for tips and tricks on having fun in the command-line.</p>
+</div>
+<div class="paragraph">
+<p>Commands used whilst playing around with 'figlet' and 'cowsay'</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>brew search cowsay</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You set up the cowsay with <code>brew install cowsay</code>, then pipe something to <code>cowsay</code> and the cow says it…</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">&gt; cowsay 'Hello'
+   _______
+  &lt; Hello &gt;
+   -------
+          \   ^__^
+           \  (oo)\_______
+              (__)\       )\/\
+                  ||----w |
+                  ||     ||</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, you can do <code>fortune | cowsay</code> and it will give the fortune via cow.</p>
+</div>
+<div class="paragraph">
+<p>Banner with: <code>brew install banner</code>
+figlet
+Different font files with figlet
+Hippo instead of cow</p>
+</div>
+<div class="listingblock">
+<div class="title">How to read output from a command into VIM</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">:r !echo "Zeinzu" | figlet -f isometric1.flf</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Where to find the fonts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">cd /opt/homebrew/Cellar/figlet/2.2.5/share/figlet/fonts</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">How to run the test suite in background</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">ls **/*.rb **/*.erb | entr -r -c rspec</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It says:
+list every file here that has a suffix of .rb or . everything here that has a suffix of .erb
+then pipe to it -r and -c with the next command of <code>rspec</code></p>
+</div>
+<div class="paragraph">
+<p>This is an example, can also use jest, or capyabara, or any other test suite
+It continuously listens for something to happen</p>
+</div>
+<div class="paragraph">
+<p><code>Ag -l TODO</code>
+<code>Ag TODO</code> will show you exact lines that they’re in</p>
+</div>
+<div class="paragraph">
+<p>If we mark the TODO within the file immediately then we can actually use it with AG immediately,</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Use the last argument given in a command</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cd !$</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inserts the last argument of the last command executed</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title">Practical example for the last command diven</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">ls /projects/KOTP/publish_book/0_publish_ruby/
+cd !$ <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This will take us directly to the path (taken as an argument) with the cd command</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><strong>Resources</strong></div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://explainshell.com/explain?cmd=tmux+-f+%7E%2F.tmux.conf">Search Engine for Shell Commands</a></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<hr>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/end-section.svg" alt="end section" width="3%">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<h1 id="_git_version_control" class="sect0"><strong>Git Version Control</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control/" target="_blank" rel="noopener">Getting started with Git version control</a></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><a href="https://git-scm.com/book/en/v2">The indepth documentation is here</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Articles to read:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.codementor.io/@citizen428/git-tutorial-10-common-git-problems-and-how-to-fix-them-aajv0katd" target="_blank" rel="noopener">Git Tutorial: 10 Common Git Problems and How to Fix Them</a></p>
+</div>
+<div class="paragraph">
+<p>Git is a free and open source version control system.
+<a href="https://github.com/">Github</a> is the centralised hub that allows the remote storage of all things Git related. It is a type of Centralized Version Control System(CVCS), this is the standard for version control.</p>
+</div>
+<div class="paragraph">
+<p>If Git is a version control system that for tracking change.</p>
+</div>
+<div class="paragraph">
+<p>There are alternatives to Github, like sourcehut, Gitlab; but one could also build a personalized server to host versions remotely for team members to use.
+Github is nice for various reasons. It has a GUI interface, and there are social aspects to it that allows users to share their code with a larger audience, but teams working on specific things can use it to collaborate effectively.</p>
+</div>
+<div class="paragraph">
+<p>We use Git to "save" the state of code if we are at a cross roads in the process, this allows us to return to that state later on should we make an error.</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;ll start with a cheat-sheet of the commands used most frequently, and note as we go&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setting_up_initializing_a_new_repository">Setting up &amp; Initializing a new Repository</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From the local machine we initiliaze a new empty repository. This acts as a sort of wrapper that allows us to place pins at various points in the code. We do so with the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git init</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is important to know that the git init command will set a wrapper for the current directory from within which it is set, as well as anychild repositories beneath it.
+Consider this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">&gt; Parent directory   &lt;------- git init
+&gt; |
+&gt; |
+&gt; |------Child directory &lt;------- this directory will now also be
+                                  encapsulated by the wrapper</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When we want to copy all the code from a remote repository into one that we have created locally, we use cloning. The name is pretty explanatory, it creates a clone (double) version of the code in the remote repository and copies it to our machine. To do this, we must have the url link of that code featured on a remote repo (or hosted location) so that we can tell Git where to clone it from, otherwise it cannot know. We use the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git clone [url]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once we clone the code to our local we can now do what we please with it. However, if we would now like to host it on a remote repo or a CVCS then we must attach a new remote to it, as naturally the attached remote will be the one that it was originally cloned from.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git clone [not_my_url]
+git remote -v
+
+
+&gt;[not_my_url](fetch)
+&gt;[not_my_url](push)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We look closer at how to do this later, for now just remember that that&#8217;s somebody else&#8217;s url attached, not yours.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_staging">Staging</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So we have initialized an empty Git repository, meaning we now have a wrapper to track any changes that occur in our process.
+We make some changes to our code and would like to save the current state of where things are. We can do a few things:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git status
+# to show modified files in the working directory, staged or not for the next commit
+
+git add [file]
+# we use this command to "stage" the state of a file to the next commit
+
+git reset [file]
+# we use this to unstage a file while retaining the changes in the working directory
+# for instance: we have staged multiple files and would like to unstage just one in particular from the next commit <i class="conum" data-value="1"></i><b>(1)</b>
+git diff
+
+git diff --staged
+# we use this to visualize the difference between the current code state and what is staged but not yet committed
+
+git commit -m "[some descriptive message]" <i class="conum" data-value="2"></i><b>(2)</b>
+# we use this to commit the staged content as a new commit "snapshot"</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Why might we do this? Well, when we make our commit messages we like each commit to encapsulate one particular thing at a time, one incremental step at a time: we want to make multiple small steps/commits rather than one big one, because this means that the process is more maintainable should something go wrong: we make one small change at a time, therefore each commit should be a grouping of changes that make sense to be together. Consider the following example:
+<div class="ulist">
+<ul>
+<li>
+<p>As a mechanic, someone brings us a car to fix</p>
+</li>
+<li>
+<p>The dashboard is not working</p>
+</li>
+<li>
+<p>We go through fixing each component of the electronics in the dashboard</p>
+</li>
+<li>
+<p>Each time we fix something we start the car to see if works</p>
+</li>
+<li>
+<p>We fix the windscreen wipers and the radio (without checking to start the car)</p>
+</li>
+<li>
+<p>The car is no longer working</p>
+</li>
+<li>
+<p>Because we did not check each incremental step we now do not know which fix caused the car to stop working.</p>
+</li>
+<li>
+<p>To keep it simple when we write the commit message we should not have to use the word "and" to describe what we have changed, if we did then its probably too long.</p>
+</li>
+</ul>
+</div></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Generally it is considered a better idea to use <code>git commit -v</code> (v stands for verbose) instead, as it allows us to stop and think about whether we are writing a meaningful commit message, whether the code is in a correct state ready for committing, and to peruse over the changes in the code. We stop and think for a moment not only because we are practitioners of zen, and meditation, but also because we want to consider whether returning to such a state would arouse confusion, or whether it is a safe place to return to. It&#8217;s a little like jumping across stepping stones if you are lucky enough to be chosen as a participant of Takeshi&#8217;s castle, you can stop at any stage - you just need to be sure that the stone you stop on is solid enough to hold your weight and that you can balance on it.</td>
+</tr>
+</table>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/takeshi.jpg" alt="takeshi" width="40%">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_branches_merging">Branches &amp; merging</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A useful way to think about git version control is to consider the wrapper as a tree of sorts. The great thing about this is that if we want to start working on a feature or part of the code without affecting the current state of our code, we can create a branch. The root branch of a git wrapper is generally called 'main', but you can set it to whatever you want - previously it was called 'master' branch, but to get away frmo the master/slave langauge it was changed to the former. The root branch of the wrapper on this very project is called 'unbroken' for instance, as ideally the root branch is the only one that cannot, and communicating that it must not, be broken/corrupt. This is particularly useful when working as part of a team, and different pairs/squads/people of that team are working on different parts of the code. To avoid getting in each others hair code is written on separate branches and then merged back onto the main in pull request - which is where those writers request the incorporation of their newly written code into the main.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git branch
+# to check branches, * appears aside the branch we are currently on
+
+git branch [name-of-new-branch]
+git checkout -b [name-of-new-branch]
+# to create a new branches we have these options
+
+git checkout [name-of-branch]
+# to switch to another branch and check it out into working directory
+
+git merge [name-of-branch]
+# to merge the specified branch's history into the current one <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Sometimes this can be a caveat, as changes are made to multiple branches at
+the same time (by different people, or by us - if we are jumping between two or
+more aspects of the code) then once we merge back onto the main we may have
+repeated commit messages, and when looking back through our commit messages
+things might look messy. To render them clean, we use <code>git rebase</code> instead, see below.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_inspecting_comparing">Inspecting &amp; Comparing</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git log
+# to show all commits in the current branch's history <i class="conum" data-value="1"></i><b>(1)</b>
+
+git shortlog
+# to view only the first line of each commit message</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Using git log shows the first line of the commit message followed by any
+extraneous information we include within the verbose commit entry (<code>git commit
+-v</code>).</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As a convention that we try to follow, the first line of a given
+commit message should not be greater than 50 characters long (4.75 is the
+average length of a word in English). When reading the commit messages we
+should be able to follow the narrative of how we came to be at any particular
+state in the code. the commit message, if verbose should provide the 'who?
+what? why? how?'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git log branchB..branchA
+# to show the commits on branchA that are not on branchB
+
+git diff branchB..branchA
+# to show the diff of what is in branchA that is not in branchB
+
+git show [SHA key] <i class="conum" data-value="1"></i><b>(1)</b>
+# show any object in Git in human-readable format</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This will only show the contents of the object in Git, meaning we will only be able to view the contents of the commit message and the diff (differences) from that state. In order to actually place ourselves at the very state of a particular message, we use: <code>git checkout [SHA key]</code>, once we do this we will be able to move around from within the code at that very state.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tracking_path_changes">Tracking Path Changes</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git rm [file]
+
+git mv [existing-path][new-path]
+
+git log --stat -M</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ignoring_patterns">Ignoring Patterns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To prevent the staging or commit of certain files, we write a .gitignore file</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">logs/
+*.notes
+pattern*/
+#Save a file with desired paterns as .gitignore with either direct string
+matches or wildcard globs.
+
+git config --gloabl core.excludesfile[file]
+#system wide ignore pattern for all local repos</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sharing_updating">Sharing &amp; Updating</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So now we arrive at how to change the remote address to which we will push the updated code. This so that others can write to it themselves.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git remote add [alias, usually origin][url]
+# add a git URL as an alias
+
+git fetch [alias]
+#fetches down all the branches from that Git remote <i class="conum" data-value="1"></i><b>(1)</b>
+
+git merge[alias]/[branch]
+# merge a remote branch into your current branch to bring it up to date
+
+git push [alias][branch]
+# Transmit local branch commits to the remote repository branch
+
+git pull
+# fetch and merge any commits from the tracking remote branch</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The difference between <code>git pull</code> vs <code>git fetch</code>
+:vic-says:
+You can use <code>git fetch</code> to know the changes done in the remote repo/branch since
+your last pull. This is useful to allow for checking before doing an actual
+pull, which could change files in your current branch and working copy (and
+potentially lose your changes, etc).
+If you do a fetch, you do not have to do an "actual pull", at least in the
+terms of doing git pull literally.  Instead you can do a rebase or merge or
+reset using the local reference, since you just got done doing the fetch part
+of the pull command.
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.freecodecamp.org/news/git-fetch-vs-pull/">FreeCodeCamp Explanation</a></p>
+</li>
+<li>
+<p><a href="https://scribe.rip/@sabbirhossain_70520/git-fetch-vs-git-pull-691823ed4239">A Medium Article</a></p>
+</li>
+</ul>
+</div></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rewriting_history">Rewriting History</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Remember when we mentioned that merging made for sometimes messy commit history? This is the alternative which makes for much cleaner commit messages:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git rebase [branch]
+# applies any commits of current branch ahead of specified one
+# this will put the commit messages on top of the ones that already exist on another branch, but will allow us to not have duplicate messages in our commit history.
+
+git rebase -i root
+# we use when we really want to clean up our commit history <i class="conum" data-value="1"></i><b>(1)</b>
+
+git reset --hard [commit]
+# clear staging area, rewrite working tree from specified commit</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The '-i' flag stands for interactive, we enter into this mode to pick specifically which messages in the history we want to change. As we go through, we either:
+<div class="ulist">
+<ul>
+<li>
+<p>leave commit message as be</p>
+</li>
+<li>
+<p>modify the prefix word with 'edit' :when we want to change the contents of the commit message</p>
+</li>
+<li>
+<p>modify the prefix word with 'squash' : when we want to "flatten"/erase that particular commit message; though be careful, doing so can cause the next commit object to break meaning that if you were to checkout the code at that particular state it may be missing some code or state required for it to function correctly.</p>
+</li>
+</ul>
+</div></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_making_temporary_commits">Making Temporary Commits</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We use these when we need to temporarily store written files that have not been committed yet, for instance: if we would like to checkout another branch but have not committed changes made yet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">git stash
+
+git stash list
+
+git stash pop
+
+git stash drop</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reverting_commits">Reverting Commits</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To revert only a specific file from a previous commit message, we can do this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ git checkout [revision_hash] [file_name]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This was taken from here:https://coderwall.com/p/dvdrzg/retrieve-single-file-from-old-commit-on-git</p>
+</div>
+<hr>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/end-section.svg" alt="end section" width="3%">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<h1 id="_ruby" class="sect0"><strong>Ruby</strong></h1>
+<div class="sect1">
+<h2 id="_introdution">Introdution</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<a href="https://www.ruby-lang.org/en/documentation/" target="_blank" rel="noopener"><strong>Official Ruby documentation</strong></a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph normal">
+<p>Ruby is commonly known by its community as being "very expressive",
+perhaps that&#8217;s because it&#8217;s dynamically typed, or because objects (as we&#8217;ll momentarily see) can be coerced.
+We can change things at the language level.
+It might also be that, in Ruby, there are <em>many many many</em> ways to do anything and everything.
+{url-whys-chapter-2}[Some, window=_blank] say that "Vitamin R. Goes straight to the head.".</p>
+</div>
+<div class="paragraph">
+<p>Ruby was invented by Yukihiro Matsumoto. Kon’nichi wa, Mr Matsumoto.
+The idea was/is to have a language that is not only "really expressive", but also really simple.
+That doesn&#8217;t mean simplistic, however, since we can do all manner of complex things,
+like <a href="https://www.youtube.com/watch?v=yHFMvfuEBSk" target="_blank" rel="noopener">this WebAssembly interpreter</a>.</p>
+</div>
+<div class="paragraph">
+<p>The simplicity of Ruby contributes to the idiomatic nature of it,
+meaning it reads slightly like natural language -
+it&#8217;s design is such that even a non-programmer can understand more or less what is happening.
+To get a really nice primer in Ruby through fun and inspiring reading see <a href="http://poignant.guide/" target="<em>blank"><em>Why&#8217;s Poignant Guide</em></a>.
+For something more serious see <a href="https://www.manning.com/books/the-well-grounded-rubyist" target="_blank" rel="noopener">_The Well Grounded Rubyist</em></a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ruby_in_practice">Ruby in Practice</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_syntax">Syntax</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title"><strong>Good Guides</strong></div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://tutorials.jumpstartlab.com/projects/ruby_in_100_minutes.html" target="_blank" rel="noopener">Ruby in 100 minutes</a> - Learn the fundamental syntax you need to get started programming with Ruby</p>
+</li>
+<li>
+<p><a href="https://www.ruby-lang.org/en/documentation/quickstart/" target="_blank" rel="noopener">Ruby in 20 minutes</a> - Small Ruby tutorial</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_variables_and_statements">Variables and Statements</h4>
+<div class="paragraph">
+<p>Since a Ruby program is your own Universe, we get to choose what things are called. This is called <strong>naming</strong>.
+Naming is a big part of programming, because we need to give sensible and meaningful names, so other users of this world (other programmers for instance) can manipulate the world without beoming confused by what things are.
+A lot of wasted programming time can be traced down to choosing a bad name for a new object in a program world.</p>
+</div>
+<div class="paragraph">
+<p>One way to give an object a name is to make a label for it, and attach the object to that lable.
+These labels are called variables, and the process are called <strong>variables</strong>, and the process of attachement is called <strong>assignment</strong>.</p>
+</div>
+<div class="paragraph">
+<p>We call and expression like <code>1 + 2</code> a statement (<code>one = 1</code> is a statement also).</p>
+</div>
+<div class="literalblock">
+<div class="title">Variables</div>
+<div class="content">
+<pre>local
+@instance
+@@class
+CONSTANT</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_messages_and_interfaces">Messages and Interfaces</h4>
+<div class="paragraph">
+<p>Our REPL gives us a window through which we can interact with the program world. How does that interaction happen?</p>
+</div>
+<div class="sect4">
+<h5 id="_messages">Messages</h5>
+<div class="paragraph">
+<p>We interact with the program world by sening it <strong>messages</strong>. In response to our messages, objects <strong>return</strong> something.
+When we&#8217;re using the REPL, the program world treats us, the programmer, as if we were just another object in the object world.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_dot_syntax">Dot syntax</h5>
+<div class="paragraph">
+<p>The only way to send messages to objects in Ruby is with the <code>.</code> (dot): it means 'send this object a message', for instance:
+<code>2.integer?</code> or <code>5.positive?</code> means "send the object referenced (by the numbers 1 and 5 respectively) amessages asking it to answer if it&#8217;s an integer or not."</p>
+</div>
+<div class="paragraph">
+<p>So <code>1 + 2</code> is actually translated to <code>1.+(2)</code></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_arguments">Arguments</h5>
+<div class="paragraph">
+<p>When a messaged object requires something else to answer the message, we call that something else the <strong>argument</strong>, for instance:
+<code>1.+</code> &#8658; "add what?"/"what should I add?" that missing element in the message is what we call the argument.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_chaining_messages">Chaining messages</h5>
+<div class="paragraph">
+<p>It&#8217;s ok to send lots of messages to objects, one after the other:</p>
+</div>
+<div class="paragraph">
+<p><code>four.+(five).+(seven).-(one)</code></p>
+</div>
+<div class="paragraph">
+<p>the queing up of messages is known as "chaining".</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_flow_of_control">Flow of Control</h4>
+<div class="paragraph">
+<p>The order in which an object executes instructions is called the control flow.
+One way of controlling this order is using a conditionl to control which instructions get executed and which don&#8217;t.</p>
+</div>
+<div class="paragraph">
+<p>Another way is doing so manually, with parantheses:
+an object will evaluate statements in parentheses before any other statement in an instruction.</p>
+</div>
+<div class="sect4">
+<h5 id="_using_while_and_break_to_make_games">Using <code>while</code> and <code>break</code> to make games</h5>
+<div class="paragraph">
+<p>Most games are built around loops, with some 'break' condition being 'the end of the game':</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_using_accumulators">Using accumulators</h5>
+<div class="paragraph">
+<p>An object might want to keep track of some value during a while loop.
+The object can&#8217;t just define a variable inside the loop:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">while true do
+  points_scored = 0
+
+  if magnus_carlsen.win_game
+    points_scored = points_scored + 1
+  end
+end</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_while_loop_conditions"><code>while</code> loop conditions</h5>
+<div class="paragraph">
+<p>An object can execute procedures in a while loop forever,
+if we tell it to run while true.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_return"><code>return</code></h5>
+<div class="paragraph">
+<p><code>return</code> says to an object:</p>
+</div>
+<div class="paragraph">
+<p>Stop from executing this procedure.
+Return this value as the 'return value' from the procedure.
+It&#8217;s typically used inside a method,
+to say "this is what should come back from calling this method".
+However, we can use it to manage the control flow because
+instructions after a return will never be executed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">if true
+  puts 1
+  return 0
+
+  puts 2
+end</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_other_objects">Other objects</h4>
+<div class="paragraph">
+<div class="title">what is an object</div>
+<p>Resources:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://bparanj.gitbooks.io/ruby-basics/content/what_is_an_object.html" target="_blank" rel="noopener">An object in Ruby with analogy</a></p>
+</div>
+<div class="paragraph">
+<div class="title">everything is an object in ruby</div>
+<p><a href="https://jerrylin224.gitbooks.io/commonly-asked-interview-questions-for-rails-deve/content/basic/why-everything-is-object-in-ruby.html" target="_blank" rel="noopener">Everything in Ruby is an object?</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://stackoverflow.com/questions/3429553/is-everything-an-object-in-ruby" target="_blank" rel="noopener">Is everything in Ruby really an object (Stackoverflow)?</a></p>
+</div>
+<div class="paragraph">
+<p>{url-ruby-everything-is-object-blog_p1}[Blog discussion on objects in Ruby( part 1 ), window=_blank]</p>
+</div>
+<div class="paragraph">
+<p>{url-ruby-everything-is-object-blog_p2}[Blog discussion on objects in Ruby( part 2 ), window=_blank]</p>
+</div>
+<div class="paragraph">
+<p>In Ruby, some <strong>objects</strong> are made for us.
+For instance, numbers are ready and waiting for us whenever we set up the Ruby world.
+We can just assign these pre-existent numbers to variables if we like.</p>
+</div>
+<div class="paragraph">
+<p>We are familiar by now with a few kinds of objects:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>integers</p>
+</li>
+<li>
+<p>floats</p>
+</li>
+<li>
+<p>true</p>
+</li>
+<li>
+<p>false</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>what other objects exist in this world?</em>
+<em>what are they for?</em>
+<em>how do we make new objects?</em></p>
+</div>
+<div class="sect4">
+<h5 id="_nil"><code>nil</code></h5>
+<div class="paragraph">
+<p><code>nil</code> is an object that represents <em>nothing</em>. It can&#8217;t do much much: it just says : "there is absence of anything here"</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_strings">Strings</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_arrays">Arrays</h4>
+<div class="paragraph">
+<p>Objects contain things: integers conatin the value of the integer; strings contain a bit of text.
+Whatever an object 'contains' we call that object&#8217;s <strong>state</strong>.
+There are objects that can store more than one thing, we call it an Array.</p>
+</div>
+<div class="paragraph">
+<p>The Array class creates instances that can store many other objects inside themselves.
+They can have objects added to them, and removed from them. they grow and they shrink,
+depending on how many objects they contain.</p>
+</div>
+<div class="paragraph">
+<p>Any object in Ruby that can change its state during the course of the program we call <strong>mutable</strong>,
+so an Array is mutable.</p>
+</div>
+<div class="paragraph">
+<p>Strings can be altered and manipulated, so they are <strong>mutable</strong>.
+Integers can&#8217;t be changed, <code>1</code> will alays represent <code>1</code>: so integers are <strong>immutable</strong>.</p>
+</div>
+<div class="sect4">
+<h5 id="_modifying_arrays">Modifying Arrays</h5>
+<div class="listingblock">
+<div class="title">Adding to an Array</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">another_array = []
+another_array.push("A short string")
+
+another_array
+# ["A short string"]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Removing elements from an Array</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">array = ["a", "b", "c"]
+
+array.delete_at(1)
+
+array
+# ["a", "c"]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Removing the last element from an Array</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">array = [1, 2, 3]
+
+array.pop
+
+array
+# [1, 2]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_reading_arrays">Reading Arrays</h5>
+<div class="listingblock">
+<div class="title">Reading a single element from array by sending the array the [] method with required index</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# To get the first element
+array[0]
+# 1
+
+# To get the second element
+array[1]
+# 2</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Access different elements of the array above using [].</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">array = [1, 2, 3, 4, 5, 6]
+
+array.slice(0, 1)<i class="conum" data-value="1"></i><b>(1)</b>
+# [1]
+
+array.slice(3,2)
+# [4, 5]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&lt;1&gt;This method takes two arguments,
+the first argument is the starting index,
+the last argument is the length of the slice.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_making_arrays_from_strings">Making arrays from strings</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">string = String.new("this is a string")
+# "this is a string"<i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&lt;1&gt;This is an example of syntactic sugar.
+If we create a new string with <code>string="this is a string"</code>,
+then behind the scenes it does the above.</p>
+</div>
+<div class="listingblock">
+<div class="title">Getting an element of the string</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">string = "Hello there"
+string[0]
+# "H"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Turning a string into an array</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">string = "Hello World!"
+
+string.split
+# ["Hello", "World!"]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Removing an element from a string</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">string = "Hello World!"
+
+string.split("l")
+# ["He", "", "o Wor", "d!"]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Building an array with each element</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">string = "Hello World!"
+
+string.split("")
+# ["H", "e", "l", "l", "o", " ", "W", "o", "r", "l", "d", "!"]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_arrays_of_arrays">Arrays of arrays</h5>
+<div class="paragraph">
+<p>Arrays can contain arrays.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">groups = [
+  ["Mary", "Sam"],
+  ["Peter", "Kay"]
+]
+
+groups[0][0]
+# "Mary"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Combing arrays</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">array_1 = ["What's", "the", "last", "word", "in", "this"]
+array_2 = ["sentence?"]
+
+array_1 + array_2
+# ["What's", "the", "last", "word", "in", "this", "sentence?"]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Finding out how many elements</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">array = [1, 2, 3, 4, 5]
+
+array.length
+# 5</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Checking if elements are in arrays</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">words = ["Hello", "there"]
+
+words.include?("there")
+# true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hashes">Hashes</h4>
+<div class="paragraph">
+<p>Arrays and hashes are similar, they are both collections,
+and contain lists of elements.</p>
+</div>
+<div class="paragraph">
+<p><em>Differences</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Elements of an array are identified only by their location within array (index)</p>
+</li>
+<li>
+<p>Elements of hash are identified by a key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For arrays we can only use integers as keys (i.e. <code>0</code>, <code>1</code>, <code>2</code>, and <code>999</code>)
+For hashes, however, we more commonly use string as keys instead:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">favourite_things = { "sport" =&gt; "tennis", "food" =&gt; "chunky bacon" }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>More commonly than this, we use <strong>symbols</strong>.
+Symbols are a special and very widespread object in Ruby. They are similar to
+strings, except they&#8217;re immutable – they can&#8217;t be changed once they&#8217;ve been
+set. To write a symbol, add a semicolon : before its name :my_symbol.  Since we
+rarely want to change the keys in a hash, symbols are a perfect choice.</p>
+</div>
+<div class="paragraph">
+<p>We can actually use <em>any</em> object as a key&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">day = "Monday"
+
+schedule = {
+  "Monday" =&gt; "Do ruby exercises",
+  "Tuesday" =&gt; "Do more ruby exercises",
+  "Wednesday" =&gt; "Do some more ruby exercises",
+  "Thursday" =&gt; "Do the same thing as on Monday",
+  "Friday" =&gt; "Do the same thing as on Tuesday"
+  }
+
+# To do a lookup
+
+schedule[Monday]
+
+#&gt; "Do ruby exercises"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Removing things from within hash</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">favourite_things = { :films =&gt; ["Hackers", "Titanic", "The Matrix", "CATS"] }
+favourite_things[:films].delete_at(0)
+favourite_things[:films].push("Now You See Me 2").push("Citizen Kane")
+
+favourite_things
+{"films"=&gt;["Titanic", "The Matrix", "CATS", "Now You See Me 2", "Citizen Kane"]}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Grouping things in hashes</div>
+<p>do exercise&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="title">Iterating over hashes</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">my_favourite_things = { :sport =&gt; "tennis", :music =&gt; "classical" }
+
+my_favourite_things.each do |key, value|
+  # Do something with key and value
+end
+# We get a result.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_methods">Methods</h4>
+<div class="paragraph">
+<p>Most Ruby procedures are wrapped up in methods, which are defined 'inside' objects.
+When we call a method on an object:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">1.positive?
+true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That object executes a procedure inside itself:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># Inside 1
+if self &gt; 0
+  return true
+else
+  return false
+end
+
+# It then returns the outcome of the procedure: true</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Methods are reusable procedures.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Defining methods</div>
+<p>We define a methodm using <code>def</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">def method_name
+  # Whatever the procedure does goes in here
+end</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Just like variables, we define a name for the method,
+so that we can call it later.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Returning values from methods</p>
+</li>
+<li>
+<p>We have in Ruby the implicit <code>return</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">def hello
+  return "Hello World!"
+end
+
+# is identical to
+
+def hello
+  "Hello World!"
+end</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Empty methods procedures
+As <code>nil</code> is a Ruby object used to represent the 'absence of anything'.
+ When we define an empty method
+– one with no procedure inside –
+Ruby will secretly add a line containing nil to it.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">def do_nothing
+end
+
+# is identical to
+
+def do_nothing
+  nil
+end</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Methods often take parameters,
+we can provide it with 'arguments' to use during the procedure.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">films_i_like = ["Eternal Sunshine", "Matrix"]
+
+# push takes one argument
+films_i_like.push("Rust and Bone")
+
+# ["Eternal Sunshine", "Matrix", "Rust and Bone"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Note on best practice</em>
+Methods should do one thing, and do it well.
+The word and in a method name is a major clue that something&#8217;s been refactored poorly.
+This principle is called the Single Responsibility Principle.</p>
+</div>
+<div class="paragraph">
+<p>Taking a procedure (lots of lines of code) and grouping it into a named method is an example of abstraction.
+Abstraction results in code that is easier to work with
+– using the <code>average</code>[1] method is definitely easier than writing all those lines of code each time
+– but we lose understanding of what&#8217;s happening inside the code.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>See  Makers on Teachable (chapter 9) <a href="https://mastery-curriculum.makers.tech/chapter9/" target="_blank" rel="noopener">here</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Some notes on helpful rules of thumb for picking the right abstraction when writing methods
+Can you name your method in a simple way, without using the word 'and'?
+Does it do one thing, and nothing more?
+Can you name your method after what it returns, instead of what it does?
+For instance, average(test_scores) is a better name than averages_scores(test_scores).
+For another example, score(hand) is a better method name than scores_cards(hand).</p>
+</div>
+<div class="paragraph">
+<p>If you can answer 'yes' to both 1 and 2, your method is more likely to be a good one.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_classes">Classes</h4>
+<div class="paragraph">
+<p>Insert notes from Makers Teachable (chapter 10): <a href="https://mastery-curriculum.makers.tech/chapter10/" class="bare">mastery-curriculum.makers.tech/chapter10/</a></p>
+</div>
+<div class="paragraph">
+<p>Then the rest, below&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>See this <a href="https://www.tutorialspoint.com/ruby/ruby_classes.htm" target="_blank" rel="noopener">article</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">eigenclass</div>
+<p><a href="https://medium.com/rubycademy/understanding-the-eigenclass-in-less-than-5-minutes-dcb8ca223eb4" class="bare">medium.com/rubycademy/understanding-the-eigenclass-in-less-than-5-minutes-dcb8ca223eb4</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_introduction_to_ruby_language_prose_and_slightly_less_technical">Introduction to Ruby language (prose, and slightly less technical)</h3>
+<div class="quoteblock">
+<div class="title">A Quick (and Hopefully Painless) Ride Through Ruby (with Cartoon Foxes)</div>
+<blockquote>
+<div class="paragraph">
+<p>"<strong>Read the following aloud to yourself</strong></p>
+</div>
+<div class="paragraph">
+<p><code>['toast', 'cheese', 'wine'].each { |food| print food.capitalize  }</code></p>
+</div>
+<div class="paragraph">
+<p>While Ruby may sometimes read like English, it sometimes reads as a shorter
+English. Fully translated into English, you might read the above as: With the
+words ‘toast’, ‘cheese’, and ‘wine’: take each food and print it capitalized.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Why the Lucky Stiff<br>
+<cite>Why's Poignant Guide to Ruby</cite>
+</div>
+</div>
+<div class="paragraph">
+<p>Ruby is a language of careful balance. Its creator, Yukihiro "Matz" Matsumoto, blended parts of his favourite languages ( Perl, Smalltalk, Eiffel, Ada, and Lisp ) to form a new language that balanced functional programming with imperative programming.
+He has often said that he is "trying to make Ruby natural, not simple," in a way that mirrors life.
+Building on this, he adds:
+Ruby is simple in appearance, but is very complex inside, just like our human body.&#8201;&#8212;&#8201;extract from the ruby-lang.org website</p>
+</div>
+<div class="paragraph">
+<p>&#8201;&#8212;&#8201;taken from makersacademy.teachable&#8230;&#8203;
+<a href="https://makersacademy.teachable.com/courses/makers-academy-mastery-precourse/lectures/3989239" class="bare">makersacademy.teachable.com/courses/makers-academy-mastery-precourse/lectures/3989239</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_driven_development_tdd">Test Driven Development (TDD)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_what_is_it">What is it?</h3>
+<div class="paragraph">
+<p><strong>Part-first:</strong></p>
+</div>
+<div class="paragraph">
+<p>First of all, <em>why write tests</em>?</p>
+</div>
+<div class="paragraph">
+<p>The reason is two-fold:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>It allows other programmers after us to see precisely what each component of
+the code does (or is supposed to do) without spending too long pulling out the
+hair.</p>
+</li>
+<li>
+<p>If ever there is an issue, a bug, the error message should tell us specifically
+where to look. So it reduces the scope of where we should be investigating.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Part-second:</strong></p>
+</div>
+<div class="paragraph">
+<p>Now the main reason for following TDD:</p>
+</div>
+<div class="paragraph">
+<p>It also allows us to be lazy programmers, and only write as much as is
+necessary to pass the tests incrementally, and advance the functionality of the
+code one small step at a time.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.goodreads.com/book/show/387190.Test_Driven_Development" target="_blank" rel="noopener">Kent Beck’s book on TDD</a> for an in-depth look, or consider watching this
+video. this Robert C Martin video: <a href="https://www.youtube.com/watch?v=B93QezwTQpI" target="_blank" rel="noopener">The Transformation Priority Premise</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_red_green_refactor">Red Green Refactor</h3>
+<div class="paragraph">
+<p>Like a traffic light, the process of TDD goes through <strong>three stages</strong>:</p>
+</div>
+<div class="paragraph">
+<p><em>Assuming we have written a test stating what we expect the result of some actionable component should be;</em></p>
+</div>
+<div class="paragraph">
+<p>1.<strong><span class="red">RED:</span> We run the test, and watch it fail.</strong></p>
+</div>
+<div class="paragraph">
+<p>2.<strong><span class="green">GREEN:</span> We write the code necessary to pass the test.</strong></p>
+</div>
+<div class="paragraph">
+<p><em>BONUS: we intentionally break the test to check that it is actually working correctly, then we change it back.</em></p>
+</div>
+<div class="paragraph">
+<p>3.<strong><span class="yellow">REFACTOR:</span> We refactor the code.</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">A short example of this process</span></p>
+</div>
+<script id="asciicast-gY7IifBqLpw2mdAHPPZdwc762" src="https://asciinema.org/a/gY7IifBqLpw2mdAHPPZdwc762.js" async></script>
+<div class="paragraph">
+<p>Notice that in this case we could theoretically pass every name given in as a conditional, and just go on forever.
+We wrote one extra test case at the end but we might have stopped at three.
+We then refactored after that.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can copy the code from the recording, and paste it in your terminal.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_frameworks">Testing Frameworks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We consider testing frameworks in light of being able to verify that our code does what it is intended to do. We have different ways of testing:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Unit testing</strong>: individual software components are tested, an inidividual component could either be an individual function or a procedure.</p>
+</li>
+<li>
+<p><strong>Integration testing</strong>: testing the interface between two or more software units or modules. The aim is to expose faults in the interaction between integrated units.Generally we do this after unit testing has been performed.</p>
+</li>
+<li>
+<p><strong>End to End testing</strong>: verifying code&#8217;s deployed behaviour from a user perspective, by automating a user simulationthat interacts with your system as a black box (we will look at Capybara for this in the web section below)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For a detailed explanation of the differences between these Twilio has a great article on this <a href="https://www.twilio.com/blog/unit-integration-end-to-end-testing-difference" target="_blank" rel="noopener">here</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_unit_testing_with_rspec">Unit testing with <strong>RSpec</strong></h3>
+<div class="paragraph">
+<p><strong><em>What is it?</em></strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://rspec.info/" target="_blank" rel="noopener">RSpec</a> is a kind of programming tool called a test
+framework, it&#8217;s written for use with the programming language Ruby. We can use
+it to test that a particular component (sych as a method) does what is supposed to do by matching (or not) an expected output with the actual output.
+We can also use it to build our test-driving practice.</p>
+</div>
+<div class="paragraph">
+<p>The documentation can be found <a href="https://relishapp.com/rspec" target="_blank" rel="noopener">here</a>.</p>
+</div>
+<details>
+<summary class="title"><em>Setting up an RSpec project:</em></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell"># This assumes you have Ruby &amp; RVM installed. If you don't, visit:
+# https://rvm.io/ to install RVM.
+
+# First, create a directory for your project
+; mkdir your-project-directory
+; cd your-project-directory
+
+# Then, we're going to get you the latest Ruby
+; rvm get stable
+; rvm use ruby --latest --install --default
+
+# Next, install bundler, which manages dependencies like RSpec
+; gem install bundler
+
+# Create a bundler project
+; bundle init
+
+# And add RSpec to your dependencies
+; bundle add rspec
+
+# Generate an RSpec template
+; rspec --init
+
+# Create a folder for your implementation code
+; mkdir lib
+
+# And create a repository for your changes
+; git init .
+; git add .
+; git commit -m "Project setup"
+
+# Then go and create a repository on github.com
+# On the next screen after you have created the repository,
+# follow the "Push an existing repository from the command line" section
+# To push your project to your github repository
+# It will look something like this...
+; git remote add origin YOUR_REMOTE_ADDRESS
+; git branch -M main
+; git push -u origin main</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_web_frameworks">Web Frameworks</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sinatra"><strong>Sinatra</strong></h3>
+<div class="sect3">
+<h4 id="_what_is_sinatra"><em>What is Sinatra?</em></h4>
+<div class="paragraph">
+<p><a href="https://sinatrarb.com/documentation.html" target="_blank" rel="noopener">Sinatra</a> is a Domain Specific language (DSL) for creating web applications in Ruby with minimal effort.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<strong>Official docs</strong> <a href="https://sinatrarb.com/documentation.html" target="_blank" rel="noopener">here</a>.
+</div>
+</div>
+<div class="listingblock">
+<div class="title">The basic syntax is:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># inside app.rb
+
+require 'sinatra'
+
+get '/frank-says' do
+  'Put this in your pipe $ smoke it!'<i class="conum" data-value="1"></i><b>(1)</b>
+end</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We would then run 'ruby app.rb', visit the <code>localhost</code> and see the above printed out.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+How to <a href="https://sinatrarb.com/intro.html" target="_blank" rel="noopener">get started</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_create_a_ruby_api_with_sinatra">How to Create a Ruby api with Sinatra</h4>
+<div class="paragraph">
+<p>The aim of this exercise is to create a very basic
+api that we will then interact with using endpoints (basic CRUD functionality).</p>
+</div>
+<div class="paragraph">
+<p>Main resource found <a href="https://x-team.com/blog/how-to-create-a-ruby-api-with-sinatra/" target="_blank" rel="noopener">here</a>.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<a href="https://stackoverflow.com/questions/389169/best-practices-for-api-versioning" target="_blank" rel="noopener">See this bookmark for best practice on API versioning</a>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_creating_the_project">Creating the project</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">mkdir booklist</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because this app will be really simple, we will only use this file to store all of BookList source code inside.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">cd booklist &amp;&amp; touch server.rb</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">gem install sinatra</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># server.rb
+require 'sinatra'
+
+get '/' do
+  'Welcome to BookList!'
+end</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>we run the server with: <code>ruby server.rb</code></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_adding_mongoid_and_the_book_model">Adding Mongoid and the Book model</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">brew update &amp;&amp; brew install mongodb</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However that command does not work, so we use the following instead:</p>
+</div>
+<div class="paragraph">
+<p><code>brew services stop mongodb-community@6.0</code></p>
+</div>
+<div class="paragraph">
+<p>We reinstall <code>mongosh</code> and we get this message after putting in the following command: <code>db.enableFreeMonitoring()</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">{
+  state: 'enabled',
+  message: 'To see your monitoring data, navigate to the unique URL below. Anyone you share the URL with will also be able to view this page. You can disable monitoring at any time by running db.disableFreeMonitoring().',
+  url: 'https://cloud.mongodb.com/freemonitoring/cluster/6OHUFACQGG7AITWYGY5242AQWNX5Y7QQ',
+  userReminder: '',
+  ok: 1
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The reason we are using mongodb is because we need it create the api, but if we
+were interacting with a thrid party api we would need this.</p>
+</div>
+<div class="paragraph">
+<p>To keep this README simple, you should refer to the actual tutorial to check if
+everything is in tune and inline with the tutorial</p>
+</div>
+<div class="paragraph">
+<p>the equivalent of <code>rails console</code> in Sinatra (apparently, according to this
+tutorial) is <code>irb</code> though that isn&#8217;t quite true, since irb is Ruby&#8217;s REPL</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We found that according to the tutorial, it is possible to add things to the
+mongodb databse using the irb</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By doing the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">Book.create(title:'Foundation', author:'Isaac Admiov', isbn:'o5532293354')
+Book.create(title:'Dune', author:'Frank Herbert', isbn:'0441172717')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Directly inside the irb, It outputs the information for us.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We then created a Gemfil to keep our dependencies in one place</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_adding_a_gemfile">Adding a Gemfile</h5>
+<div class="paragraph">
+<p><code>touch Gemfile</code></p>
+</div>
+<div class="paragraph">
+<p>We populate it with the necessary information:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># Gemfile
+source 'https://rubygems.org'
+gem 'sinatra'
+gem 'mongoid'
+# Required to use some advanced features of# Sinatra, like namespaces
+gem 'sinatra-contrib'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We add one more gem <code>sinatra-contrib</code> to use the <code>namespace</code> feature later on.
+Finally, we run <code>bundle install</code> to get everything in place. From now on, we
+will use <code>bundle exec server.rb</code> to start our web API.</p>
+</div>
+<div class="paragraph">
+<p>We could also have created a <code>config.ru</code> file and run the application with Rack but to keep this tutorial short, simply using the <code>bundle</code> command is easier.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_adding_a_namespace">Adding a Namespace</h5>
+<div class="paragraph">
+<p>The reason this is important if we want to be able to version it and add a v2 later, for example.</p>
+</div>
+<div class="paragraph">
+<p>The best practice here is usually to define the API version using HTTP headers.
+However, for tutorials, it&#8217;s much simpler to have it in the URL because we can
+easily test some endpoints using a browser.</p>
+</div>
+<div class="paragraph">
+<p><strong>Two resources on namespaces in Ruby:</strong>
+- <a href="https://iwanttolearnruby.com/the-role-of-namespaces-in-ruby-on-rails/">geeks for geeks</a>
+- <a href="https://www.geeksforgeeks.org/namespaces-in-ruby/">the role of namespace in ruby on rails</a></p>
+</div>
+<div class="paragraph">
+<p>When we try to run the new site with the new endpoint, we get the following error:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">% bundle exec ruby server.rb
+/Users/benjamin/.rvm/gems/ruby-3.0.0/gems/rack-2.2.4/lib/rack/handler.rb:45:in `pick': Couldn't find handler for: thin, falcon, puma, HTTP, webrick. (LoadError)
+        from /Users/benjamin/.rvm/gems/ruby-3.0.0/gems/sinatra-3.0.2/lib/sinatra/base.rb:1504:in `run!'
+        from /Users/benjamin/.rvm/gems/ruby-3.0.0/gems/sinatra-3.0.2/lib/sinatra/main.rb:47:in `block in &lt;module:Sinatra&gt;'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So we look it up and find this possible solution to the problem:
+<a href="https://stackoverflow.com/questions/67615800/ruby-sinatra-compile-error-server-handler-thin-puma-reel-http-webrick-not-fo" class="bare">stackoverflow.com/questions/67615800/ruby-sinatra-compile-error-server-handler-thin-puma-reel-http-webrick-not-fo</a></p>
+</div>
+<div class="paragraph">
+<p>The solution proposes adding these things to the gemfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">gem install thin
+gem install puma
+gem install reel
+gem install http
+gem install webrick</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We will put them in the Gemfile instead and then run bundle install, to see if this fixes the problem.</p>
+</div>
+<div class="paragraph">
+<p>After doing so, we run the command <code>bundle install</code> but get the following error:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">An error occurred while installing eventmachine (1.2.7), and Bundler cannot continue.
+
+In Gemfile:
+  thin was resolved to 1.8.1, which depends on
+    eventmachine</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We try various things, but since there does not seem to be any requirement that
+we should be using this, we decide to remove 'thin' from the Gemfile.
+We then run the command and the api works.</p>
+</div>
+<div class="paragraph">
+<p>We get this message in the terminal</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">% bundle exec ruby server.rb
+== Sinatra (v3.0.1) has taken the stage on 4567 for development with backup from Puma
+Puma starting in single mode...
+* Puma version: 6.0.0 (ruby 3.0.0-p0) ("Sunflower")
+*  Min threads: 0
+*  Max threads: 5
+*  Environment: development
+*          PID: 22031
+* Listening on http://127.0.0.1:4567
+* Listening on http://[::1]:4567
+Use Ctrl-C to stop
+::1 - - [18/Oct/2022:14:59:07 +0200] "GET /api/v1/books HTTP/1.1" 200 338 0.0307
+::1 - - [18/Oct/2022:14:59:08 +0200] "GET /favicon.ico HTTP/1.1" 404 469 0.0009</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And the api returns, exactly what we asked for:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">[                                    <i class="conum" data-value="1"></i><b>(1)</b>
+  {
+    "_id": {
+      "$oid": "634d7dfc236f4434d041f47f"
+    },
+    "author": "Isaac Asimov",
+    "isbn": "0553293354",
+    "title": "Foundation"
+  },
+  {
+    "_id": {
+      "$oid": "634d7e02236f4434d041f480"
+    },
+    "author": "Frank Herbert",
+    "isbn": "0441172717",
+    "title": "Dune"
+  },
+  {
+    "_id": {
+      "$oid": "634d7e0a236f4434d041f481"
+    },
+    "author": "Dan Simmons",
+    "isbn": "0553283685",
+    "title": "Hyperion (Hyperion Cantos)"
+  }
+]</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>It is returned inside an array. As an array which is a collecion of json objects.
+This is in parsed version, though there is the also the browser verion to return it Raw.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_filtering">Filtering</h5>
+<div class="paragraph">
+<p>We want people to be able to filter by name, isbn, and author. How do we do that?
+We are going to use a combination of scopes and just use URL parameters to let the client filter the books.
+We are going to have to add some code.
+We are using regex to return the titles that match:</p>
+</div>
+<div class="paragraph">
+<p><code>/^#{title}/</code></p>
+</div>
+<div class="paragraph">
+<p>where <code>^</code> indicates the beginning of the text.
+It can also be turned to a case insensitive search if we use <code>/^#{title}/i</code></p>
+</div>
+<div class="paragraph">
+<p>This means that we can search for a book without giving its entire name, for instance:
+<code>localhost:4567/api/v1/books?title=Foun</code>
+<code>localhost:4567/api/v1/books?isbn=[insert isbn number here]`</code></p>
+</div>
+<div class="paragraph">
+<p>The search is working for the specific search queries, but the problem is that
+we don&#8217;t necessarily want to send all the book attributes to the client. To fix
+this, we are hoing to create a small Ruby class that will serialize books into
+JSON documents.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_creating_s_book_json_serializer">Creating s Book JSON serializer</h5>
+<div class="paragraph">
+<p>Our serializer is going to be a PORO (Plain-Old Ruby Obect) with one method
+called <code>as_json</code> that will be called whenever <code>to_json</code> is called on an
+instance.</p>
+</div>
+<div class="paragraph">
+<p>We go from having this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">[
+  {
+    "_id":    {
+      "$oid":   "634d7e0a236f4434d041f481"
+    },
+    "author": "Dan Simmons",
+    "isbn":   "0553283685",
+    "title":  "Hyperion (Hyperion Cantos)"
+  }
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">[
+  {
+    "id": "634d7e0a236f4434d041f481",
+    "title": "Hyperion (Hyperion Cantos)",
+    "author": "Dan Simmons",
+    "isbn": "0553283685"
+  }
+]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_show_endpoint_get_booksabc">The Show Endpoint: GET /books/abc</h5>
+<div class="paragraph">
+<p>Now lets add the <code>show</code> endpoint to access the details of one specific book. If
+the books i not found, we want to tell the client using the HTTP status 404.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>We can check that the show from the api is correct by doing:
+<code>bundle exec ruby server.rb</code> and then heading over to the website.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_create_endpoint_post_books">The Create Endpoint: POST /books</h5>
+<div class="paragraph">
+<p>Being able to add books is an important feature for BookList. We will follow
+best practices for our create endpoint and return 201 to the client while using
+the Location header to tell the client where it can find the newly created
+book, if it wants to</p>
+</div>
+<div class="paragraph">
+<p>We are going to need to create the base url, so let&#8217;s add a helper to do this.
+We also need a helper to parse the request body and return an error to the
+client if the parsing fails.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Some of the curl commands we use to check/test:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">invalid json
+curl -i -X POST -H "Content-Type: application/json" -d'{"title":"The Power Of Habit"' http://localhost:4567/api/v1/books
+
+without all required parameters
+curl -i -X POST -H "Content-Type: application/json" -d'{"title":"The Power Of Habit"}' http://localhost:4567/api/v1/books
+
+with valid parameters
+curl -i -X POST -H "Content-Type: application/json" -d'{"title":"The Power Of Habit", "author":"Charles Duhigg", "isbn":"081298160X"}' http://localhost:4567/api/v1/books</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_update_endpoint_patch_booksabc">The Update Endpoint: PATCH /books/abc</h5>
+<div class="paragraph">
+<p>It&#8217;s a mix between the <code>hosw</code> and the <code>create</code> endpoint.</p>
+</div>
+<div class="paragraph">
+<p>We first retrieve the book, then update the attributes before returning the
+updated book.</p>
+</div>
+<div class="paragraph">
+<p>We update the server.rb file with a new patch method inside our namespace</p>
+</div>
+<div class="paragraph">
+<p>We use the curl command to verify the result we get from that
+To test the endpoint, to run those we will need to change the id used by an ide
+we have in our database</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Some of the curl commands we use to check/test:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">invalid json
+curl -i -X PATCH -H "Content-Type: application/json" -d ' {"title":"Foundation"' http://localhost:4567/api/v1/books/5710b7b6fef9afa7a8e5db81
+
+Invalid Title
+curl -i -X PATCH -H "Content-Type: application/json" -d '{"title":""}' http://localhost:4567/api/v1/books/5710b7b6fef9afa7a8e5db81
+
+Valid Title
+curl -i -X PATCH -H "Content-Type: application/json" -d '{"title":"Foundation, Asimov"}' http://localhost:4567/api/v1/books/5710b7b6fef9afa7a8e5db81</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_delete_endpointdeletebooksabc">The Delete Endpoint:DELETE/books/abc</h5>
+<div class="paragraph">
+<p>We&#8217;re now 0n the last endpoint that we need. Here, we will retrieve a book,
+delete it if it exists and return <code>204 No Content</code> to the client.</p>
+</div>
+<div class="paragraph">
+<p>We make the curl request to delete the book from BookList</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl - i -X DELETE -H "Content-Type: application/json" http://localhost:4567/api/v1/books/5710b7b6fef9afa7a8e5db81</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_simplifying_our_endpoints">Simplifying our endpoints</h5>
+<div class="paragraph">
+<p>We can see alot of repeated code in our endpoints. We can change this by using
+some helpers and refactoring a bit of the code of each endpoint.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_demo_of_the_process">Demo of the process</h5>
+<div class="paragraph">
+<p><strong>First part:</strong></p>
+</div>
+  <script id="asciicast-cewZR1zNmJvvSi1pA5NbGpZzf" src="https://asciinema.org/a/cewZR1zNmJvvSi1pA5NbGpZzf.js" async></script>
+<div class="paragraph">
+<p><strong>Second part:</strong></p>
+</div>
+  <script id="asciicast-VRtATEBMSomaiKSHZpiQjLCUI" src="https://asciinema.org/a/VRtATEBMSomaiKSHZpiQjLCUI.js" async></script>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_creating_and_authenticating_users_in_a_sinatra_app">Creating and Authenticating Users in a Sinatra app</h4>
+<div class="paragraph">
+<p>Learn to authenticate users with the database and sessions</p>
+</div>
+<div class="sect4">
+<h5 id="_storing_users_in_the_database">Storing users in the database</h5>
+<div class="paragraph">
+<p>Usually, user account will be stored in a database.
+User accounts can also be considered a resource: we can create a new user account (signing up), read its information (account page), update it, etc.</p>
+</div>
+<div class="paragraph">
+<p>Something to keep in mind when storing user account information, especially when it contains sensitive data (like a password), is encryption.
+A password should never be stored in plain text in a database, as even databases can be subjected to security breaches and attacks.</p>
+</div>
+<div class="paragraph">
+<p>You can use the <code>bcrypt</code> gem in Ruby to achieve this. Make sure you store the encrypted password when inserting the user account in the databse,
+and check against the correct encrypted value when authenticating the user.</p>
+</div>
+<div class="listingblock">
+<div class="title">lib/user_repository.rb</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">class UserRepository
+  def create(new_user)
+    encrypted_password = BCrypt::Password.create(new_user.password)
+
+    sql = '
+      INSERT INTO users (email, password)
+        VALUES($1, $2);
+    '
+    sql_params = [
+      new_user.email,
+      encrypted_password
+    ]
+  end
+
+  def sign_in(email, submitted_password)
+    user = find_by_email(email)
+
+    return nil if user.nil?  <i class="conum" data-value="1"></i><b>(1)</b>
+
+    encrypted_submitted_password = BCrypt::Password.create(submitted_password)
+
+    if user.password == encrypted_submitted_password
+      # login success
+    else
+      # wrong password
+    end
+  end
+
+  def find_by_email(email)
+    # ...
+  end
+end</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We should be saying <code>return nil unless user</code></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_on_sessions">On Sessions</h5>
+<div class="paragraph">
+<p>By design, web server can&#8217;t remember information about specific client = it only receives requests, and sends back a response.</p>
+</div>
+<div class="paragraph">
+<p>In order to keep track about a specific client, we can use a feature of Sinatra called the session. By storing information in the sessoinm we can make it available in any subsequent requests from the same client.</p>
+</div>
+<div class="paragraph">
+<p>Authentication is a very good example on how sessoins can be useful - here is a typical HTTP flow of a user signing in:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user (through web browser) signs in on a website using their credentials.</p>
+</li>
+<li>
+<p>The web browser send the HTTP request with the credentials to the server.</p>
+</li>
+<li>
+<p>The serve checks the credentials, usually by looking in a ddatabase.</p>
+</li>
+<li>
+<p>If credentials are valid, the server stores information about the signed-in user in the session and sends back the response.</p>
+</li>
+<li>
+<p>During any other request sent by the same client (so, by the same user), the session will contain the user information stored previously.
+For any other client, the sessoin will not contain this information.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>So the session is a way to "remember" information about a specific user, even though the client they are using is sending many different requests to the server.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_using_sessoins_in_sinatra">Using sessoins in Sinatra</h5>
+<div class="listingblock">
+<div class="title">lib/application.rb</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">class Application &lt; Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+  end
+
+  # This route simply returns the login page
+  get '/login' do
+    return erb(:login)
+  end
+
+  # This route receives login information (email and password)
+  # as body parameters, and find the user in the database
+  # using the email. If the password matches, it returns
+  # a success page.
+  post '/login' do
+    email = params[:email]
+    password = params[:password]
+
+    user = UserRepository.find_by_email(email)
+
+    # This is a simplified way of
+    # checking the password. In a real
+    # project, you should encrypt the password
+    # stored in the database.
+    if user.password == password
+      # Set the user ID in session
+      session[:user_id] = user.id
+
+      return erb(:login_success)
+    else
+      return erb(:login_error)
+    end
+  end
+
+  # This route is an example
+  # of a "authenticated-only" route.
+  # It can be accessed only if a user is
+  # signed-in (if we have user information in session).
+  get '/account_page' do
+    if session[:user_id] == nil
+      # No user id in the session
+      # so the user is not logged in.
+      return redirect('/login')
+    else
+      # The user is logged in, display
+      # their account page.
+      return erb(:account)
+    end
+  end
+end</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rails">Rails</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_hanami">Hanami</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_web_testing">Web testing</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_capybara">Capybara</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_repl">REPL</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_debugging">Debugging</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_object">Object</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Using JavaScript with Ruby</div>
+<p><a href="https://www.techopedia.com/definition/28106/polymorphism-general-programming" class="bare">www.techopedia.com/definition/28106/polymorphism-general-programming</a></p>
+</div>
+<div class="paragraph">
+<div class="title">what is <code>super</code> in Ruby?</div>
+<p><a href="https://stackoverflow.com/questions/31019009/what-is-super-in-ruby" class="bare">stackoverflow.com/questions/31019009/what-is-super-in-ruby</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_self_in_ruby_and_how_to_use_it">What is self in Ruby and how to use it</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See this great <a href="https://www.rubyguides.com/2020/04/self-in-ruby/" target="_blank" rel="noopener">article</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">self and .this</div>
+<p><a href="http://poligen.gitlab.io/javascript-this-and-ruby-self/" class="bare">poligen.gitlab.io/javascript-this-and-ruby-self/</a></p>
+</div>
+<div class="sect2">
+<h3 id="_arrays_2">Arrays</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_methods_2">Methods</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_access_control">Access control</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://technical-qa.com/what-are-the-three-levels-of-method-access-control-for-classes-and-what-do-they-signify/#What_are_the_three_levels_of_method_access_control_for_classes_and_what_do_they_signify" target="_blank" rel="noopener">What are the three levels of method access control for classes</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ruby_theory">Ruby theory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For an indepth section on theory see the following chapter.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_general">API (general)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://whoapi.com/blog/a-beginners-guide-to-writing-an-api/" class="bare">whoapi.com/blog/a-beginners-guide-to-writing-an-api/</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://legacydocs.hubspot.com/docs/methods/forms/forms_overview" class="bare">legacydocs.hubspot.com/docs/methods/forms/forms_overview</a></p>
+</div>
+<div class="sect2">
+<h3 id="_solid_principles_in_ruby">SOLID principles in Ruby</h3>
+<div class="paragraph">
+<p>See this great <a href="https://www.honeybadger.io/blog/ruby-solid-design-principles/" target="_blank" rel="noopener">article</a>.
+See <a href="http://rubyblog.pro/2017/05/solid-single-responsibility-principle-by-example" target="_blank" rel="noopener">here</a> for an explanation by example.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dependency_injection_in_ruby">Dependency injection in Ruby</h3>
+<div class="paragraph">
+<p><a href="https://medium.com/@Bakku1505/introduction-to-dependency-injection-in-ruby-dc238655a278" target="_blank" rel="noopener">Ruby intro to dependency injection</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Useful books</strong>
+99 Bottles of OOP - Sandi Metz
+The Well-Grounded Rubyist - David A. Black
+Practical Object-Oriented Design in Ruby - Sandi Metz
+Eloquent Ruby - Russ Olsen
+Design Patterns in Ruby - Russ Olsen
+Refactoring: Ruby Edition - Jay Fields, Shane Harvie, Martin Fowler, Kent Beck
+Refactoring in Ruby - William C. Rake, Kevin Rutherford</p>
+</div>
+<hr>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/end-section.svg" alt="end section" width="3%">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<h1 id="_theory" class="sect0"><strong>Theory</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph normal">
+<p>To keep things relatively clear, I will try to stick to Ruby language for this survey of basic theory in programming.
+I&#8217;ll talk about other languages vaguely, however, as I find that sometimes it&#8217;s easier for me to consider certain concepts in other languages - it&#8217;s sometimes the case that I haven&#8217;t explicitly encountered such and such a concept in Ruby. But I&#8217;m often reminded by my mentor that that doesn&#8217;t mean it doesn&#8217;t exist in Ruby.
+Ruby is commonly known by the community as being "very expressive", perhaps that&#8217;s because it&#8217;s dynamically typed, or because objects (as we&#8217;ll momentarily see) can be coerced. We can change things at the language level.
+It might also be that, in Ruby, there are <em>many many many</em> ways to do anything and everything.</p>
+</div>
+<div class="paragraph">
+<p>Ruby was invented by a lovely Japanese man - Yukihiro Matsumoto.
+The idea was/is to have a language that is not only "really expressive", but also really simple.
+That doesn&#8217;t mean simplistic, however, since we can do all manner or complex things, like <a href="https://www.youtube.com/watch?v=yHFMvfuEBSk" target="_blank" rel="noopener">this WebAssembly interpreter</a>.</p>
+</div>
+<div class="paragraph">
+<p>The simplicity of Ruby contributes to the idiomatic nature of it, meaning it reads slightly like natural language - it&#8217;s design is such that even a non-programmer can understand more or less what is happening.
+To get a really nice primer in Ruby through fun and inspiring reading see <a href="http://poignant.guide/" target="<em>blank"><em>Why&#8217;s Poignant Guide</em></a>.
+For something more serious see <a href="https://www.manning.com/books/the-well-grounded-rubyist" target="_blank" rel="noopener">_The Well Grounded Rubyist</em></a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_language_paradigms">Language paradigms</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two big familias of programming paradigms:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>Declarative Programming Paradigm</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Logic Programming Paradigm</p>
+</li>
+<li>
+<p>Functional Programming</p>
+</li>
+<li>
+<p>Databbase Processing</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Imperative Programming Paradigm</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Procedural programming Paradigm</p>
+</li>
+<li>
+<p>Object Oriented Programming</p>
+</li>
+<li>
+<p>Parallel Processing Approach</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Ruby falls into the Object Oriented Programming Paradigm, since everything is an object - well, almost everything&#8230;&#8203; actually not quite, but let&#8217;s pretened for now.</p>
+</div>
+<details>
+<summary class="title"><strong>What is an object?</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>An instance of a class. To some it&#8217;s also the root class in ruby (Object).
+Clases themselves descend from the Object root class.</p>
+</div>
+<div class="paragraph">
+<p>Things that an object might have:
+- identity (object identifier)
+- State
+- Behaviour</p>
+</div>
+<div class="paragraph">
+<p>In the real world:
+- A Dog, has state (colourm breed, name, hungry) and behaviour (barking, fetching, wagging tail)
+- A bike has state (current gear, current pedal cadence, current speed), behaviours (changing gear, changing pedal cadence, applying brakes)</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<div class="sect2">
+<h3 id="_what_is_oop">What is OOP?</h3>
+<div class="paragraph">
+<p>OOP is defined as a programming paradigm that relies on the concept of classes
+and objects.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a brief overview of what you can achieve with OOP: you can use it to
+structure a software program into simple, reusable code blocks (in this case
+usually called classes), which you then use to create individual instances of
+sss objects.</p>
+</div>
+<div class="paragraph">
+<p><em>*The four pillars of OOP:*</em>
+  1. Abstraction
+  2. Encapsulation
+  3. Polymorphism
+  4. Inheritance</p>
+</div>
+<div class="sect3">
+<h4 id="_abstraction"><em>Abstraction</em></h4>
+<details>
+<summary class="title"><strong>What is abstraction?</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>To abstract something away means to hide away the implementation details inside
+something – sometimes a prototype, sometimes a function. So when you call the
+function you don&#8217;t have to understand exactly what it is doing.</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect3">
+<h4 id="_encapsulation"><em>Encapsulation</em></h4>
+<div class="paragraph">
+<p>The definition of encapsulation is "the action of enclosing something in or as
+if in a capsule". Removing access to parts of your code and making things
+private is exactly what Encapsulation is all about (often times, people refer
+to it as data hiding).</p>
+</div>
+<details>
+<summary class="title"><strong>What is encapsulation?</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Encapsulation in OOPs may also mean restricting direct access to certain
+components of an object so that users can&#8217;t access the state values for all
+variables of a particular object.  Therefore, encapsulation can be used to hide
+data members and functions associated with an instantiated class or object.
+Encapsulation is analogous to a capsule where the mixture of medicines inside
+the pill represents the data and methods while the hard outer shell could be
+though of as the class.</p>
+</div>
+<div class="paragraph">
+<p>The concept of binding fileds (object state) and methods (behaviour) together as a single unit.</p>
+</div>
+<div class="paragraph">
+<p>Programming languages such as Java use <strong>encapsulation</strong> in the form of classes. A
+class allows programmers to create objects with variables (data) and behaviours
+(methods or functions). Since a class consists of data and methods <strong>packed into
+a single unit</strong>, it is an example of encapsulation.</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>How is encapsulation different from abstraction?</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<div class="title">Key Difference</div>
+<ul>
+<li>
+<p>Abstraction shows only useful data by providing the most necessary details
+whereas Encapsulation wraps code and data for necessary information.</p>
+</li>
+<li>
+<p>Abstraction is focused mainly on <strong><em>what</em></strong> should be done while Encapsulation is
+focused on <strong><em>how</em></strong> it should be done.</p>
+</li>
+<li>
+<p>Abstraction hides complexity by giving you a more abstract picture while
+Encapsulation hides internal working so that you can change it later.</p>
+</li>
+<li>
+<p>Abstraction helps you partition the program into many independent portions
+whereas Encapsulation is easy to change with new requirements.</p>
+</li>
+<li>
+<p>Comparing Encapsulation vs Abstraction, Abstraction solves problem at design level while
+Encapsulation solves problem at implementation level.</p>
+</li>
+<li>
+<p>Abstraction hides the irrelevant details found in the code whereas Encapsulation helps developers to
+organize the entire code easily.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect3">
+<h4 id="_polymorphism"><em>Polymorphism</em></h4>
+<details>
+<summary class="title"><strong>What is polymorphism?</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Polymorphism means "the condition of occurring in several different forms."
+That&#8217;s exactly what the fourth and final pillar is concerned with – types in
+the same inheritance chains being able to do different things.</p>
+</div>
+<div class="paragraph">
+<p>The real power of polymorphism is sharing behaviours, and allowing custom
+overrides.</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>And finally&#8230;&#8203;</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_inheritance"><em>Inheritance</em></h4>
+<details>
+<summary class="title"><strong>What is inheritance?.</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Inheritance lets one object acquire the properties and methods of another
+object. In JavaScript this is done by Prototypal Inheritance.</p>
+</div>
+<div class="paragraph">
+<p>Reusability is the main benefit here. We know sometimes that multiple places
+need to do the same thing, and they need to do everything the same except for
+one small part. This is a problem inheritance can solve.</p>
+</div>
+<div class="paragraph">
+<p>This is where we can think about Liskov Substitution principle.</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><strong>What do we mean by prototypical inheritance?</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>In short, it is the assignement of the behaviours of one object to another, in
+the case we&#8217;re we do not define the behaviours or datasets belonging to a new
+object we create. It is the extension of the behaviours of one object that we
+call the prototype to other objects.</p>
+</div>
+<div class="paragraph">
+<p>In programming, we might want to take something and extend it.</p>
+</div>
+<div class="paragraph">
+<p>For instance, we have a user object with its properties and methods, and want to make <code>admin</code> and <code>guest</code> as slighly modified variants of it.
+We&#8217;d like to reuse what we have in <code>user</code>, not copy/reimplement its methods, just build a new object on top of it.</p>
+</div>
+<div class="paragraph">
+<p><strong>Prototypal inheritance</strong> is a language feature that helps in that.</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>In Ruby classes and modules are two object types that allow us to do this to extend "meaning" or "structure" beyond onto other programmable things.
+We also have other tactics, such as the <code>extend</code> keyword. (Perhaps later we will have an example.)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_is_a_class">What is a Class?</h4>
+<details>
+<summary class="title">Details</summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>If we need to build a new data type, we need to write a class for it. This
+class <strong>serves as a blueprint</strong> or <strong>template</strong> for your <strong>new data type</strong>.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s important because it <strong>lets us know what things can belong within this data type,
+and perhaps more importantly what behaviours or routine behaviours belong on that class</strong>.
+A class groups data and member functions/methods that work on those data
+members. Thus a class groups data and functions related to each other. We call
+it data encapsulation in technical language.</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect3">
+<h4 id="_what_is_a_module">What is a Module?</h4>
+<div class="paragraph">
+<p>A Module is a collection of methods, constants, and class variable. Modules are
+defined as a class, but with the <strong>module</strong> keyword not with class keyword.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Basically a library of sorts, where we can store data types-like with a class,
+except we dont instantiate an instance of a module.</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Modules are about providing methods that you can use across multiple classes -
+think about them as "librairies" (as you would see in a Rails app). Classes are
+about objects; modules are about functions.</em></strong></p>
+</div>
+<div class="paragraph">
+<p>You might also use a module when you have shared methods across multiple apps
+(again, the library model is good here).  Answer taken from</p>
+</div>
+<div class="paragraph">
+<p>Important points about Modules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You cannot inherit modules or you can&#8217;t create a subclass of a module.</p>
+</li>
+<li>
+<p>Objects cannot be created from a module.</p>
+</li>
+<li>
+<p>Modules are used as namespaces and as mixins.</p>
+</li>
+<li>
+<p>All the classes are modules, but all the modules are not classes.</p>
+</li>
+<li>
+<p>The class can use namespaces, but they cannot use mixins like modules.</p>
+</li>
+<li>
+<p>The name of a module must start with a capital letter.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Syntax:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">module Module_name
+  # statements to be executed
+end</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># Ruby program to illustrate the module
+# Creating a module with name Gfg
+
+module Gfg
+
+  C = 10;
+
+  # Prefix with name of Modul
+  # module method
+  def Gfg.portal
+    puts "Welcome to GFG Portal!"
+  end
+
+  # Prefix with the name of Module
+  # module method
+  def Gfg.tutorial
+    puts "Ruby Tutorial!"
+  end
+
+  # Prefix with the name of Module
+  # module method
+  def Gfg.topic
+    puts "Topic - Module"
+  end
+end
+
+# displaying the value of
+# module constant
+
+puts Gfg::C
+
+# calling the methods of the module
+Gfg.portal
+Gfg.tutorial
+Gfg.topic</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Output</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">10
+Welcome to GFG Portal!
+Ruby Tutorial!
+Topic - Module</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong>
+- To define module method the user has to prefix the name of the module with the
+  method name while defining the method. The benefit of defining module method
+  is that use can call this method by simply using the name of module and dot
+  operator as shown in above example.
+- A user can access the value of a module constant by using the double colon
+  operator(::) as show in the above example.
+- If the user will define a method with def keyword only inside a module <em>i.e.
+  def method_name</em> then it will consider an an instance method. A user cannot
+  access instance method directly with the use of the dot operator as he cannot
+  make the instance of the module.
+- To access the instance method defined inside the module, the user has to
+  include the module inside a class and then use the class instance to access
+  that method. Below example illustrates this concept clearly.
+- The user can use the module inside the class by usingg <em>include</em> keyword. In
+  this case, the module works like a namespace.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># Ruby program to illustrate how
+# to use module inside a class
+
+# Creating a module with name Gfg
+module Gfg
+
+  # module method
+  def portal
+    puts "Welcome to GFG Portal!"
+  end
+
+  # module method
+  def tutorial
+    puts "Ruby Tutorial!"
+  End2Endd
+
+  # module method
+  def topic
+    puts "Topic - Module"
+  end
+
+end
+
+
+# Create class
+class GeeksforGeeks
+
+  # Include module in class
+  # by usingg 'include' keyword
+  include Gfg
+
+  # Method of the class
+  def add
+    x = 30 + 20
+    puts x
+  end
+
+end
+
+# Creating objects of class
+obj_class = GeeksforGeeks.new
+
+# calling module methods
+# with the help of GeeksforGeeksorGeeks
+# class object
+obj_class.portal
+obj_class.tutorial
+obj_class.topic
+
+# Calling class method
+obj_class.add</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Use of Modules:</strong>
+A module is a way to categorize the methods and constants so
+that user can reuse them Suppose he wants to write two methods and also wants
+to use these methods in multiple programs. So, in this case they can write
+these methods in a module, so that they can easily call this module in any
+program with the help of require keyword without re-writing code.</p>
+</div>
+<details>
+<summary class="title"><strong>What is the difference between a class and a module?</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Modules serve as a mechanism for namespaces.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">module ANamespace
+  class AClass
+    def initialize
+      puts "Another object, coming right up!"
+  end
+end
+
+ANamespace::AClass.new
+ #=&gt; Another object, coming right up!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also, modules provide as a mechanism for multiple inheritance via mix-ins and
+cannot be instantiated like classes can.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">module AMixIn
+ def who_am_i?
+   puts "An existntialist, that's who."
+ end
+end
+
+
+# String is already the parent class
+class DeepString &lt; String
+  # extends adds instance methods from AMixIn as class methods
+  extend AMixIn
+end
+
+DeepString.who_am_i?
+#=&gt; An existentialist, that's who.
+
+AMixIn.new
+#=&gt; NoMethodError: undefined method 'new' for AMixIn:Module</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">class</th>
+<th class="tableblock halign-left valign-top">module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>instantiation</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can be instantiated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can <strong>not</strong> be instantiated</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>usage</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object creation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mixin facility. provide a namespace.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>superclass</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>methods</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">class methods and instance methods</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">module methods and instance methods</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>inheritance</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inherits behaviour and can be base for inheritance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No inheritance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>inclusion</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cannot be included</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can be included in classes and modules by using the include command (includes
+all instance methods as instance methods in a class/module)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>extension</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can not extend with extend command (only with inheritance)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">module can extend instance by using extend command (extends given instance with singleton methods from module)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Another explanation.</em></p>
+</div>
+<div class="paragraph">
+<p>A Module is a collection of methods, constants, and class variable. Modules are
+defined as a class, but with the <strong>module</strong> keyword not with class keyword.</p>
+</div>
+<div class="paragraph">
+<p>Important points about Modules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You cannot inherit modules or you can&#8217;t create a subclass of a module.</p>
+</li>
+<li>
+<p>Objects cannot be created from a module.</p>
+</li>
+<li>
+<p>Modules are used as namespaces and as mixins.</p>
+</li>
+<li>
+<p>All the classes are modules, but all the modules are not classes.</p>
+</li>
+<li>
+<p>The class can use namespaces, but they cannot use mixins like modules.</p>
+</li>
+<li>
+<p>The name of a module must start with a capital letter.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Syntax:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">module Module_name
+  # statements to be executed
+end</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># Ruby program to illustrate the module
+# Creating a module with name Gfg
+
+module Gfg
+
+  C = 10;
+
+  # Prefix with name of Modul
+  # module method
+  def Gfg.portal
+    puts "Welcome to GFG Portal!"
+  end
+
+  # Prefix with the name of Module
+  # module method
+  def Gfg.tutorial
+    puts "Ruby Tutorial!"
+  end
+
+  # Prefix with the name of Module
+  # module method
+  def Gfg.topic
+    puts "Topic - Module"
+  end
+end
+
+# displaying the value of
+# module constant
+
+puts Gfg::C
+
+# calling the methods of the module
+Gfg.portal
+Gfg.tutorial
+Gfg.topic</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Output</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">10
+Welcome to GFG Portal!
+Ruby Tutorial!
+Topic - Module</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong>
+- To <strong>define a module method</strong> the user has to prefix the name of the module with the
+  method name while defining the method. The benefit of defining a module method
+  is that the user can call this method by simply using the name of module and dot
+  operator as shown in above example.
+- A user can access the value of a module constant by using the double colon
+  operator(::) as show in the above example.
+- If the user will define a method with def keyword only inside a module <em>i.e.
+  def method_name</em> then it will consider an an instance method. A user cannot
+  access instance method directly with the use of the dot operator as he cannot
+  make the instance of the module.
+- To access the instance method defined inside the module, the user has to
+  include the module inside a class and then use the class instance to access
+  that method. Below example illustrates this concept clearly.
+- The user can use the module inside the class by usingg <em>include</em> keyword. In
+  this case, the module works like a namespace.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># Ruby program to illustrate how
+# to use module inside a class
+
+# Creating a module with name Gfg
+module Gfg
+
+  # module method
+  def portal
+    puts "Welcome to GFG Portal!"
+  end
+
+  # module method
+  def tutorial
+    puts "Ruby Tutorial!"
+  End2Endd
+
+  # module method
+  def topic
+    puts "Topic - Module"
+  end
+
+end
+
+
+# Create class
+class GeeksforGeeks
+
+  # Include module in class
+  # by usingg 'include' keyword
+  include Gfg
+
+  # Method of the class
+  def add
+    x = 30 + 20
+    puts x
+  end
+
+end
+
+# Creating objects of class
+obj_class = GeeksforGeeks.new
+
+# calling module methods
+# with the help of GeeksforGeeksorGeeks
+# class object
+obj_class.portal
+obj_class.tutorial
+obj_class.topic
+
+# Calling class method
+obj_class.add</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Use of Modules:</strong>
+A module is a way to categorize the methods and constants so
+that user can reuse them Suppose he wants to write two methods and also wants
+to use these methods in multiple programs. So, in this case they can write
+these methods in a module, so that they can easily call this module in any
+program with the help of require keyword without re-writing code.</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_strong_typed_vs_dynamically_typed"><em>Strong-typed</em> vs <em>Dynamically-typed</em></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ruby is dynamically typed since type checking is done at runtime,
+unlike languages like C# and Java, that both have type-safety.
+Having type-safety means we have to declare what type of values a variable can have, what type of data it can hold (i.e. whether it is <code>string</code> or <code>integer</code>, for instance). The reason for this is that if we have a method that is alleged to do some mathematical calculation on a given argument, then we need to know it&#8217;s <em>safe</em> to do so, we need to know it&#8217;s possible. We can&#8217;t, for instance, have a method (a routine operation) say:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">def method(argument)
+  # take whatever the `argument` is and multiply it by 3
+  # take the result of that and add to it the number 47
+end</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If we pass as an argument to this method the word (of type <em>string</em>) "duck", then we will receive an error message at run-time because we cannot operate numerically on string, we can only do so on an <em>integer</em>, or in Ruby <em>float</em>
+To avoid this sort of thing we therefore have <strong>type safety</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The type-saftey catch for JavaScript is known as TypeScript.
+The benefit of type safety is that any errors are caught before compiling, because these scripting languages require compilation ("building") before the code can be executed. Unlike these, Ruby compiles at run time however, and has something called duck-typing.</p>
+</div>
+<details>
+<summary class="title"><strong>What is duck typing and how does it pertain to Ruby?</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>That an object may be acted upon even if it isn&#8217;t expected type as long as it
+looks and behaves like the expected object. This is a characteristic of Ruby
+because the lack of type checking of parameters makes this an effective
+programming technique.
+<em>If it sounds like a duck, and walks like a duck, it
+must be a duck; object types are inferred and not declared</em></p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>How can duck typing be useful? Let&#8217;s think about "coercion" in programming:</p>
+</div>
+<details>
+<summary class="title"><strong>What does it mean to coerce an object? Why would you do it?</strong></summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>To <strong><em>coerce an object</em></strong> means to force it into an expected type. One migt do
+this in order to try and force an unknown object type into the expected type or
+format required by the operation. This is a common practice ivolved in <em>duck
+typing</em>.</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_solid_principles">SOLID principles</h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>S - <strong>Single Responsibility Principle</strong> (SRP): "one and only one responsibility."</p>
+</li>
+<li>
+<p>O - <strong>Open/Close Principle</strong>: "open for extension but closed for modification."</p>
+</li>
+<li>
+<p>L - <strong>Liskov&#8217;s Substitution Principle</strong>: "parent classes should be easily substituted with their child classes without blowing up the application."</p>
+</li>
+<li>
+<p>I - <strong>Interface Segregation Principle</strong>: "many client specific interfaces are better than one general interface."</p>
+</li>
+<li>
+<p>D - <strong>Dependency Inversion Principle</strong>: "classes should depend on abstraction, but not on concretion."</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>[insert oldPhonePad challenge at this commit message:
+commit f3db652a682affb447974ed40308e65413a00120 (HEAD &#8594; unbroken, main/unbroken)
+Author: benjamin &lt;<a href="mailto:b.james.neustadt@gmail.com">b.james.neustadt@gmail.com</a>&gt;
+Date:   Thu Oct 13 09:49:50 2022 +0200]</p>
+</div>
+<div class="listingblock">
+<div class="title">SOLID principles in Ruby</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">Letters = {
+  "1"    =&gt; '&amp;',
+  "11"   =&gt; "'",
+  "111"  =&gt; '(',
+  "0"    =&gt; ' ',
+  "2"    =&gt; 'A',
+  "22"   =&gt; 'B',
+  "222"  =&gt; 'C',
+  "3"    =&gt; 'D',
+  "33"   =&gt; 'E',
+  "333"  =&gt; 'F',
+  "4"    =&gt; 'G',
+  "44"   =&gt; 'H',
+  "444"  =&gt; 'I',
+  "5"    =&gt; 'J',
+  "55"   =&gt; 'K',
+  "555"  =&gt; 'L',
+  "6"    =&gt; 'M',
+  "66"   =&gt; 'N',
+  "666"  =&gt; 'O',
+  "7"    =&gt; 'P',
+  "77"   =&gt; 'Q',
+  "777"  =&gt; 'R',
+  "7777" =&gt; 'S',
+  "8"    =&gt; 'T',
+  "88"   =&gt; 'U',
+  "888"  =&gt; 'V',
+  "9"    =&gt; 'W',
+  "99"   =&gt; 'X',
+  "999"  =&gt; 'Y',
+  "9999" =&gt; 'Z',
+  }
+
+def oldphone(str)
+  result = str.scan(/0+|1+|2+|3+|4+|5+|6+|7+|8+|9+|\*/)
+  while result.include? '*'
+    result.delete_at(result.index('*') - 1)
+    result.delete_at(result.index('*'))
+  end
+  translation = result.map {|digit_input| Letters[digit_input]}
+  translation.join
+end</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This was the state of our solution; all the logic is held inside one method.
+ALthough it passes, and solves the task at hand, it is not well structured, as
+is does not respect the single responsibility principle.</p>
+</div>
+<div class="paragraph">
+<p>After we change it, this is what we come up with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">require_relative 'transform.rb' <i class="conum" data-value="1"></i><b>(1)</b>
+
+def oldphone(str)
+  Transform.new(str).to_s       <i class="conum" data-value="2"></i><b>(2)</b>
+end</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We call in the 'transfrom.rb' file so that we can create an instance of
+that class, upon using the <code>oldphonepad</code> method.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The method is entirely sanitized, holding as little as necessary to make it
+function; here it is clearer that it calls another function behind the scenes.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">module RegularExpressions
+  module Dictionary
+  RegularExpression = {
+    repeating_digits: /0+|1+|2+|3+|4+|5+|6+|7+|8+|9+|\*/   <i class="conum" data-value="1"></i><b>(1)</b>
+  }
+  end
+end
+
+class Transform
+  include RegularExpressions::Dictionary                   <i class="conum" data-value="2"></i><b>(2)</b>
+
+  Keypad_Morpheme = {                                      <i class="conum" data-value="3"></i><b>(3)</b>
+    "1"    =&gt; '&amp;',
+    "11"   =&gt; "'",
+    "111"  =&gt; '(',
+    "0"    =&gt; ' ',
+    "2"    =&gt; 'A',
+    "22"   =&gt; 'B',
+    "222"  =&gt; 'C',
+    "3"    =&gt; 'D',
+    "33"   =&gt; 'E',
+    "333"  =&gt; 'F',
+    "4"    =&gt; 'G',
+    "44"   =&gt; 'H',
+    "444"  =&gt; 'I',
+    "5"    =&gt; 'J',
+    "55"   =&gt; 'K',
+    "555"  =&gt; 'L',
+    "6"    =&gt; 'M',
+    "66"   =&gt; 'N',
+    "666"  =&gt; 'O',
+    "7"    =&gt; 'P',
+    "77"   =&gt; 'Q',
+    "777"  =&gt; 'R',
+    "7777" =&gt; 'S',
+    "8"    =&gt; 'T',
+    "88"   =&gt; 'U',
+    "888"  =&gt; 'V',
+    "9"    =&gt; 'W',
+    "99"   =&gt; 'X',
+    "999"  =&gt; 'Y',
+    "9999" =&gt; 'Z',
+  }
+
+  RE = RegularExpression                                   <i class="conum" data-value="4"></i><b>(4)</b>
+  private_constant :RE
+
+  private
+
+  attr_reader :message
+
+  def initialize(encoded_message)
+    @message = encoded_message.scan(RE[:repeating_digits])
+    deletions
+  end
+
+  def deletions
+    while message.include? '*'
+      message.delete_at(message.index('*') - 1)
+      message.delete_at(message.index('*'))
+    end
+  end
+
+  def translate
+    message.each_with_object('') do |encoding, memo|
+      memo &lt;&lt; Keypad_Morpheme[encoding]
+    end
+  end
+
+  public
+
+  def to_s
+    translate
+  end
+
+end
+
+# Library Guard
+if $0 == __FILE__
+  puts Transform.new('22 28')
+end</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>module including the regular expression, what could be one of many</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We bring in the module to the class</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We bring in the constant to the class</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>We assign an abbreviation to the regular expression, only once we have called it previously.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>All of the methods are separated at granular level, so that each method is only
+dealing with one portion of the program&#8217;s functionality.</p>
+</div>
+<div class="sect2">
+<h3 id="_single_responsibility_principle">Single Responsibility Principle</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_openclose_principle">Open/Close Principle</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_liskovs_substitution_principle">Liskov&#8217;s Substitution Principle</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_interface_segregation_principle">Interface Segregation Principle</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_dependency_inversion_principle">Dependency Inversion Principle</h3>
+<details>
+<summary class="title"><strong>What is inversion control/dependency injection</strong>?*</summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Any nontrivial application is made up of two or more classes that collaborate
+with each other to perform some business logic. Traditionally, each object is
+responsible for obtaining its own references to the objects it collaborates
+with (its dependencies). When applying DI, the objects are given their
+dependencies at creation time by some external entity that coordinates each
+object in the system. In other words, dependencies are injected into objects.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example using Java:</p>
+</div>
+<div class="listingblock">
+<div class="title">Normally a class will depend on another class to do some work, such as above.</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">public class ClientA {
+    ServiceB service;
+
+    public void doSomething() {
+        String info = service.getInfo();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title"><code>ClientA</code> uses class <code>ServiceB</code> which is written below:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">public class ServiceB {
+    public String getInfo() {
+        return "ServiceB’s Info";
+    }
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ClientA</code> is said to be dependent on class <code>ServiceB</code>, which is thereby called a dependency of <code>ClientA</code>. This kind of dependency is trivial, though if the code gets bigger and more complex, hard.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To Be Continued&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>resource: <a href="https://www.infoworld.com/article/2071914/excellent-explanation-of-dependency-injection-&ndash;inversion-of-control-.html">dependency injection</a></p>
+</li>
+<li>
+<p>resource: <a href="https://www.codejava.net/coding/what-is-dependency-injection-with-java-code-example" target="_blank" rel="noopener">dependency injection</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</details>
+<hr>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/end-section.svg" alt="end section" width="3%">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2023-01-29 19:46:29 +0100
+</div>
+</div>
+<script src="highlight/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+<!-- <script src="/assets/js/tocbot.js"></script> -->
+<script>
+    /* Tocbot dynamic TOC, works with tocbot 3.0.2 */
+    var oldtoc = document.getElementById('toctitle').nextElementSibling;
+    var newtoc = document.createElement('div');
+    newtoc.setAttribute('id', 'tocbot');
+    newtoc.setAttribute('class', 'js-toc');
+    oldtoc.parentNode.replaceChild(newtoc, oldtoc);
+    tocbot.init({ contentSelector: '#content',
+        headingSelector: 'h1, h2, h3, h4',
+        smoothScroll: false });
+    var handleTocOnResize = function() {
+        var width = window.innerWidth
+                    || document.documentElement.clientWidth
+                    || document.body.clientWidth;
+        if (width < 768) {
+            tocbot.refresh({ contentSelector: '#content',
+                headingSelector: 'h1, h2, h3, h4',
+                collapseDepth: 6,
+                activeLinkClass: 'ignoreactive',
+                throttleTimeout: 1000,
+                smoothScroll: false });
+        }
+        else {
+            tocbot.refresh({ contentSelector: '#content',
+                headingSelector: 'h1, h2, h3, h4',
+                smoothScroll: false });
+        }
+    };
+    window.addEventListener('resize', handleTocOnResize);
+    handleTocOnResize();
+</script>
+</body>
+</html>

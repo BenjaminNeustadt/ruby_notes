@@ -1,0 +1,147 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+@import "https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css";
+
+a {
+  text-decoration: none;
+}
+
+body {
+  color: #d3d3d3;
+  background-color: #35353a ;
+}
+
+.light-body-experiment {
+  background-color: blue;
+}
+
+#toctitle {
+  font-family: Arial Black;
+  color: pink;
+}
+
+.sidebarblock {
+  background-color: #a09f9f;
+}
+
+.sidebarblock-dark-theme {
+  background-color: pink;
+}
+
+#toc.toc2 {
+  background-color: #35353a;
+  border: 3px dotted pink;
+  border-top: 3px dotted pink !important;
+}
+
+#tocbot a.toc-link.node-name--H1 {
+  color: #d3d3d3;
+}
+
+#tocbot a.toc-link {
+  color: pink;
+}
+
+h1 strong, h2 strong, h3 strong, #toctitle strong, .sidebarblock>.content>.title strong, h4 strong, h5 strong, h6 strong {
+  color: pink;
+}
+
+h2 {
+  color: #FFB6C1;
+}
+
+h3 {
+  color: #FFB6C1;
+}
+
+.admonitionblock td.content>.title, .audioblock>.title, .exampleblock>.title, .imageblock>.title, .listingblock>.title, .literalblock>.title, .stemblock>.title, .openblock>.title, .paragraph>.title, .quoteblock>.title, table.tableblock>.title, .verseblock>.title, .videoblock>.title, .dlist>.title, .olist>.title, .ulist>.title, .qlist>.title, .hdlist>.title {
+  color: #C0C0C0;
+  text-shadow: 1px 1px black;
+}
+
+a {
+  color: pink;
+}
+
+.quoteblock blockquote>.paragraph:last-child p {
+  color: #d3d3d3;
+}
+
+.quoteblock blockquote, .quoteblock p {
+  color: #d3d3d3;
+}
+
+.quoteblock .attribution cite, .verseblock .attribution cite {
+  color: pink;
+}
+
+table {
+  background-color:#d3d3d3;
+}
+
+table {
+  background-color:#d3d3d3;
+}
+
+em {
+  color: #d3d3d3;
+  text-shadow: 1px 1px black;
+}
+
+table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+  color: #a6b0a8fa;
+}
+
+table.frame-all {
+  background-color:#35353a;
+}
+
+table.tableblock, th.tableblock, td.tableblock {
+  background-color:#35353a;
+}
+
+p.tableblock>code:only-child {
+  color: palevioletred;
+}
+
+p.tableblock:last-child {
+  color: white;
+}
+
+.admonitionblock>table td.content {
+  color: silver;
+}
+
+.sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock {
+  text-shadow: 1px 1px darkslategrey;
+}
+
+.intro_phrase {
+  color: #747474;
+  font-family: Arial Black;
+  font-size: 1.1em;
+  line-height: calc(1 / 1.1);
+}
+
+.hide-first-title {
+  color: #35353a ;
+  position: absolute;
+  margin-top: -100px;
+}
+
+.email {
+  color: #d3d3d3;
+  font-family: Arial Black;
+}
+
+.author {
+  color: #d3d3d3;
+  font-family: Arial Black;
+}
+
+#header {
+  margin-top:0;
+  margin-bottom:0;
+  padding-top:0;
+  padding-bottom:0;
+}
+
